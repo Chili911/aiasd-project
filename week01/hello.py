@@ -13,17 +13,27 @@ Run with:
     python week01/hello.py
 """
 
-import sys
 
+import sys
 
 def main() -> None:
     print("Python " + sys.version.split()[0])
 
-    # TODO: read a name with input()
-    # TODO: build a list of something — greetings, courses, languages, your choice
-    # TODO: loop over the list and print each item with an f-string that
-    #       includes the name you read
+    # Read the user's name
+    name = input("Enter your name: ")
 
+    # Store football players and their ratings
+    players = ["Messi", "Ronaldo", "Mbappe", "Haaland", "Salah"]
+    ratings = [95, 94, 92, 91, 90]
+
+    # Show the football scouting list
+    print(f"\n{name}'s football scouting list:")
+
+    # Loop through the players and display their ratings
+    for i in range(len(players)):
+        print(f"{players[i]} - Rating: {ratings[i]}/100")
 
 if __name__ == "__main__":
     main()
+
+    

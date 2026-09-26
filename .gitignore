@@ -47,3 +47,5 @@ Thumbs.db
 *.sqlite
 chroma_db/
 faiss_index/
+# Visual Studio
+.vs/
