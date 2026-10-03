@@ -9,14 +9,14 @@
   "week": 2,
   "contributors": [
     {
-      "student_id": "",
+      "student_id": "230504522",
       "role": "stakeholder",
-      "what": ""
+      "what": "Suggested adding a clear warning when heavy rain is expected, so users know when they should prepare."
     },
     {
-      "student_id": "",
+      "student_id": "230504511",
       "role": "stakeholder",
-      "what": ""
+      "what": "Suggested showing clothing recommendations based on temperature and rain added clothing recommendations to Weatherly."
     }
   ]
 }
