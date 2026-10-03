@@ -16,6 +16,7 @@ Run with:
 
 import sys
 
+
 def main() -> None:
     print("Python " + sys.version.split()[0])
 
