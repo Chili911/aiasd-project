@@ -1,0 +1,63 @@
+{
+  "project": "Weather Forecasting and Avatar Styling App",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "description": "A new user signs up with an e-mail address and logs in with the 4-digit code sent to it; no passwords are stored.",
+      "functional": true,
+      "priority": "must",
+      "acceptance": "The code arrives by e-mail within one minute; entering it within 10 minutes logs the user in; an expired or wrong code is refused with a message."
+    },
+    {
+      "id": "REQ-002",
+      "description": "The app displays the weather forecast for the user's selected location for the current day and the next day.",
+      "functional": true,
+      "priority": "must",
+      "acceptance": "Select a location and open the weather screen; the current and next day's temperature, weather condition, and precipitation information are displayed."
+    },
+    {
+      "id": "REQ-003",
+      "description": "The app recommends suitable clothing and accessories based on the forecast.",
+      "functional": true,
+      "priority": "must",
+      "acceptance": "When the forecast includes rain or low temperature, the app displays relevant recommendations such as an umbrella, jacket, or hoodie."
+    },
+    {
+      "id": "REQ-004",
+      "description": "The user can customize an avatar by selecting hair, makeup, clothing, and other available appearance options.",
+      "functional": true,
+      "priority": "must",
+      "acceptance": "Open the avatar editor and select different hair, makeup, and clothing options; the selected items appear on the avatar."
+    },
+    {
+      "id": "REQ-005",
+      "description": "The user can change the avatar's body size and choose from available male and female avatar options.",
+      "functional": true,
+      "priority": "should",
+      "acceptance": "Open the avatar customization screen, select an available avatar type, and change its size; the avatar updates to show the selected appearance."
+    },
+    {
+      "id": "REQ-006",
+      "description": "Every screen is usable on a phone about 390 px wide without horizontal scrolling.",
+      "functional": false,
+      "priority": "must",
+      "acceptance": "Every screen opened on a 390 px wide phone or browser phone view has no horizontal scroll bar, no text cut off, and every button is reachable."
+    },
+    {
+      "id": "REQ-007",
+      "description": "The app sends alerts when severe weather or potentially dangerous natural weather events are expected.",
+      "functional": true,
+      "priority": "should",
+      "acceptance": "When severe weather data is available for the selected location, the app displays an alert describing the event and the recommended safety action."
+    },
+    {
+      "id": "REQ-008",
+      "description": "The app loads the weather forecast and recommendations within 3 seconds under normal network conditions.",
+      "functional": false,
+      "priority": "should",
+      "acceptance": "Measure the time from opening the weather screen to displaying the forecast and recommendations under a normal network connection; the information appears within 3 seconds."
+    }
+  ] 
+} 
+
+

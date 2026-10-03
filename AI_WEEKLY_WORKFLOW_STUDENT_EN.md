@@ -110,6 +110,11 @@ git push
 
 Messages like "update", "fix" or "asdf" cost you the commit-hygiene point.
 
+**Push at 10:00, at 11:00 and at 11:50** — three pushes in every lecture, whatever state
+the work is in. At 10:00 and 11:00 I look at the class board to see where everyone is;
+the 11:50 push is the one that counts for the lecture's points. A push costs nothing,
+and a half-finished section that is pushed is worth more than a finished one that is not.
+
 ### Run the checks yourself
 
 The same command, as often as you like:
@@ -123,11 +128,22 @@ a time. It is not a grade; it is a to-do list, and running it costs nothing.
 
 ### Push once more before the lecture ends
 
-At the end of the lecture I freeze every repository as it stands and run the checks.
+The last push is at 11:50. Right after it I freeze every repository as it stands and run the checks.
 Work you have not pushed is invisible — it sits on your laptop and does not count.
 
 The result is projected as an anonymised table; find your row by the nickname in your
 `student.json`. That table is worth **5 points — half the week**.
+
+One student, one computer, one GitHub account. Work done on a classmate's machine or
+under a classmate's GitHub session earns nothing for the lecture.
+
+**Commit discipline (1 point a week) is not judged week by week.** At Week 5, Week 10
+and the end of term I look at your whole push history and award those points in one go:
+did the work grow over time, is there real progress from one push to the next, was the
+text worked on or pasted in finished? A single push at the end of each lecture, or text
+that arrives in one piece, scores nothing there however many weeks it repeats. I may
+also ask you a two-minute question about your project in any lecture. Push as you work,
+every week, and this takes care of itself.
 
 ### Attendance, and what happens if you are not here
 
@@ -205,9 +221,17 @@ in `weekNN/contributors_NN.json` with one sentence each on what they did, plus e
 them is a list, not evidence. The burden of proof is yours; without it neither these two
 points nor your contributors' bonus is paid.
 
+**From Week 4 your contributors are your group.** In Week 3 you are put in a group of
+four, and that group stays for the term. Every week, between the lecture and Saturday,
+the four of you meet **online for one hour**: each presents what changed in their project
+that week, the other three say what they think. Your three entries in
+`weekNN/contributors_NN.json` are those three people — what each said, quoted, and what
+you did about it. Nobody can write those entries for someone who was not there.
+
 **Contributors earn a bonus.** A classmate who helps you earns 10% of your mark for that
-week, for at most two contributions a week; the same for you when you help them. The
-names rotate: at least one new person every week. Week 1 has no contributors.
+week, for at most three contributions a week; the same for you when you help them. In
+Week 2 the names are your choice; from Week 3 they are your group. Week 1 has no
+contributors.
 
 An LLM can produce every file an assignment asks for. What it cannot do is make those
 files agree with the ten weeks around them, or notice its own mistakes on your behalf.

@@ -111,6 +111,11 @@ git push
 
 "update", "fix" ya da "asdf" gibi mesajlar commit disiplini puanına mal olur.
 
+**10:00'da, 11:00'de ve 11:50'de push edin** — her derste üç push, iş hangi durumda
+olursa olsun. 10:00 ve 11:00'de sınıf tablosuna bakıp herkesin nerede olduğunu
+görüyorum; dersin puanını 11:50'deki push belirliyor. Push etmek hiçbir şeye mal olmaz;
+push edilmiş yarım bir bölüm, push edilmemiş bitmiş bir bölümden değerlidir.
+
 ### Kontrolleri kendiniz çalıştırın
 
 Aynı komut, istediğiniz kadar:
@@ -124,11 +129,22 @@ listeler. Bir not değil, yapılacaklar listesidir ve çalıştırmanın maliyet
 
 ### Ders bitmeden bir kez daha push edin
 
-Dersin sonunda her depoyu olduğu gibi dondurup kontrolleri çalıştırıyorum. Push
+Son push 11:50'de. Hemen ardından her depoyu olduğu gibi dondurup kontrolleri çalıştırıyorum. Push
 etmediğiniz iş görünmezdir — bilgisayarınızda durur ve sayılmaz.
 
 Sonuç anonimleştirilmiş bir tablo olarak yansıtılır; satırınızı `student.json`
 içindeki takma adınızla bulun. O tablo **5 puan — haftanın yarısı** değerindedir.
+
+Bir öğrenci, bir bilgisayar, bir GitHub hesabı. Bir arkadaşınızın bilgisayarında ya da
+onun GitHub oturumunda yapılan iş ders için puan getirmez.
+
+**Commit disiplini (haftada 1 puan) hafta hafta değerlendirilmez.** 5. haftada, 10.
+haftada ve dönem sonunda tüm push geçmişinize bakar ve o puanları tek seferde veririm:
+iş zamana yayılarak mı büyümüş, push'lar arasında gerçek ilerleme var mı, metin üzerinde
+çalışılmış mı yoksa bitmiş hâlde mi yapıştırılmış? Her dersin sonunda tek push ya da tek
+parça hâlinde gelen metin, kaç hafta tekrarlanırsa tekrarlansın orada puan getirmez.
+Ayrıca herhangi bir derste size projeniz hakkında iki dakikalık bir soru sorabilirim.
+Her hafta çalıştıkça push edin; gerisi kendiliğinden hallolur.
 
 ### Devam, ve burada olmazsanız ne olur
 
@@ -207,9 +223,17 @@ günlüğünüzde tarihli bir paragraf) kaydedersiniz. Arkasında hiçbir şey o
 liste demektir, kanıt değil. İspat yükü sizindir; onsuz ne bu iki puan ne de
 katkıcılarınızın bonusu ödenir.
 
+**4. Hafta'dan itibaren katkıcılarınız grubunuzdur.** 3. Hafta'da dört kişilik bir gruba
+alınırsınız ve o grup dönem boyunca kalır. Her hafta, ders ile Cumartesi arasında,
+dördünüz **bir saat çevrimiçi** buluşursunuz: her biriniz o hafta projesinde neyin
+değiştiğini anlatır, diğer üçü ne düşündüğünü söyler. `weekNN/contributors_NN.json`
+içindeki üç kaydınız bu üç kişidir — her birinin söylediği, alıntıyla, ve sizin ne
+yaptığınız. Orada olmayan biri için o kayıtları kimse yazamaz.
+
 **Katkıcılar bonus kazanır.** Size yardım eden bir sınıf arkadaşı o haftaki notunuzun
-%10'unu kazanır; haftada en fazla iki katkı. Siz onlara yardım ettiğinizde de aynısı.
-İsimler döner: her hafta en az bir yeni kişi. 1. Hafta'da katkıcı yoktur.
+%10'unu kazanır; haftada en fazla üç katkı. Siz onlara yardım ettiğinizde de aynısı.
+2. Hafta'da isimler sizin seçiminizdir; 3. Hafta'dan itibaren grubunuzdur. 1. Hafta'da
+katkıcı yoktur.
 
 Bir LLM bir ödevin istediği her dosyayı üretebilir. Yapamadığı, o dosyaları çevresindeki
 on haftayla tutarlı kılmak ya da kendi hatalarını sizin yerinize fark etmektir.
