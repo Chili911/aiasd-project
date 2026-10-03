@@ -137,7 +137,7 @@ flowchart LR
 
 WHY: Choosing technologies that we understand and can test early will reduce technical problems later. The stack should support the mobile app, web client, server, database, weather API, and login system while remaining realistic to build and maintain within ten weeks.
 
-WHAT: Weatherly will use Flutter for the mobile app, React for the web client, Node.js with Express for the server, Firebase Firestore for the database, Firebase Hosting for the web client, and Google Cloud Run for the server. Firebase Authentication will handle e-mail login codes, and the mobile app will be distributed through the Google Play Store. No AI will be used inside the main product.
+WHAT: Weatherly will use Flutter for the mobile app, React for the web client, Node.js with Express for the server, Firebase Firestore for the database, Firebase Hosting for the web client, and Google Cloud Run for the server. Firebase Authentication will handle e-mail login codes, and the mobile app will be distributed through the Samsung Galaxy Store. 
 
 
 CHECK YOURSELF: Not all technologies have been installed or tested with a Hello World yet, so they need to be tested before development starts. Firebase and Google Cloud have free tiers, but their usage limits and prices should be checked before deployment. Flutter apps can be published on the Google Play Store, so the planned mobile stack is supported.
@@ -184,38 +184,38 @@ WHY: Users already solve this problem by checking weather apps, searching for ou
 
 WHAT: AccuWeather provides weather forecasts and alerts and has a free version, but users still need other sources for outfit ideas, activities, and places to visit. Google Search is free and lets users search for weather, clothing, activities, and places, but the information is spread across different results and takes extra time to collect. Pinterest is free and provides outfit and activity ideas, but it does not provide weather forecasts or connect its suggestions directly to tomorrow’s weather.
 
-WEAK: Wearthly has no real competitors because it combines weather forecasts, recommendations, and avatar customization in one product. 
+WEAK: Weatherly has no real competitors because it combines weather forecasts, recommendations, and avatar customization in one product. 
 
 STRONG:AccuWeather is a free weather service that provides forecasts and alerts, but it does not provide outfit, activity, or place recommendations based on the weather. Google Search is free and can be used to find weather information, outfit ideas, activities, and places, but users have to search for each type of information separately. Pinterest is free and provides outfit and activity inspiration, but it does not provide weather forecasts or connect its suggestions directly to tomorrow’s weather.
 
 
 ### 10. Comparison and your advantage (about 500 characters)
 
-WHY: Users already have weather apps and websites that provide forecasts, but these tools usually focus mainly on weather information. Wearthly brings forecasts, alerts, outfit suggestions, activity and place recommendations, and avatar customization together in one product. Instead of checking different apps to understand the weather, decide what to wear, and plan activities, users can get these recommendations in one place, making daily weather planning simpler and more convenient.
+WHY: Users already have weather apps and websites that provide forecasts, but these tools usually focus mainly on weather information. Weatherly brings forecasts, alerts, outfit suggestions, activity and place recommendations, and avatar customization together in one product. Instead of checking different apps to understand the weather, decide what to wear, and plan activities, users can get these recommendations in one place, making daily weather planning simpler and more convenient.
 
-WHAT: Compared with three existing weather apps, Wearthly focuses on the features that are most useful to everyday users: cost, weather forecasts, personalized outfit suggestions, and activity or place recommendations. While the competitors mainly provide weather information and alerts, Wearthly combines these features with personalized suggestions in one product. Users can check the weather, decide what to wear, and find ideas for what to do without switching between different apps. This gives users a simple reason to choose Wearthly when they want more than just a basic weather forecast.
+WHAT: Compared with three existing weather apps, Weatherly focuses on the features that are most useful to everyday users: cost, weather forecasts, personalized outfit suggestions, and activity or place recommendations. While the competitors mainly provide weather information and alerts, Weatherly combines these features with personalized suggestions in one product. Users can check the weather, decide what to wear, and find ideas for what to do without switching between different apps. This gives users a simple reason to choose Weatherly when they want more than just a basic weather forecast.
 
-WEAK: Wearthly offers more useful features than traditional weather apps by combining forecasts with personalized recommendations in one place.
+WEAK: Weatherly offers more useful features than traditional weather apps by combining forecasts with personalized recommendations in one place.
 
-STRONG: Wearthly can be compared with AccuWeather, The Weather Channel, and Weather.com based on cost, weather information, personalized outfit suggestions, and activity or place recommendations. While these apps mainly focus on providing weather forecasts and alerts, Wearthly combines weather information with personalized suggestions in one place. Wearthly gives users a simpler way to understand the weather, decide what to wear, and plan what to do without needing several different apps.
+STRONG: Weatherly can be compared with AccuWeather, The Weather Channel, and Weather.com based on cost, weather information, personalized outfit suggestions, and activity or place recommendations. While these apps mainly focus on providing weather forecasts and alerts, Weatherly combines weather information with personalized suggestions in one place. Weatherly gives users a simpler way to understand the weather, decide what to wear, and plan what to do without needing several different apps.
 
 
 ### 11. Commercial potential (about 400 characters)
 
-WHY: Wearthly is a student project with no commercial purpose, so it does not need to generate income at this stage. The project is worth running for free because its main value is providing users with weather information and personalized recommendations in one place.
+WHY: Weatherly is a student project with no commercial purpose, so it does not need to generate income at this stage. The project is worth running for free because its main value is providing users with weather information and personalized recommendations in one place.
 
-WHAT: Wearthly has no commercial intent as a student project, so it is not designed to generate revenue or charge users. Its main value is bringing weather forecasts, outfit suggestions, activity ideas, and place recommendations together in one app. If developed commercially in the future, these features could provide a basis for a paid service.
+WHAT: Weatherly has no commercial intent as a student project, so it is not designed to generate revenue or charge users. Its main value is bringing weather forecasts, outfit suggestions, activity ideas, and place recommendations together in one app. If developed commercially in the future, these features could provide a basis for a paid service.
 
 WEAK: The project does not currently aim to generate revenue, as its purpose is to provide a useful and personalized weather experience as a student project.
 
-STRONG: Wearthly is intended to be free for users, with no commercial purpose at this stage. The project is worth running for free because it combines weather forecasts with outfit suggestions, activity ideas, and place recommendations in one simple app. If hosting costs are needed, they would be treated as part of maintaining the student project.
+STRONG: Weatherly is intended to be free for users, with no commercial purpose at this stage. The project is worth running for free because it combines weather forecasts with outfit suggestions, activity ideas, and place recommendations in one simple app. If hosting costs are needed, they would be treated as part of maintaining the student project.
 
 
 ### 12. Technical risks and how you will manage them (about 600 characters)
 
-WHY: Wearthly may face problems such as inaccurate weather data, API failures, slow loading, or difficulties connecting different features. Unexpected errors could also affect recommendations or the user experience. To manage these risks, we will test the app regularly, handle API errors properly, use reliable data sources, and keep backup options where possible. We will also test each feature separately before combining everything into the final product. 
+WHY: Weatherly may face problems such as inaccurate weather data, API failures, slow loading, or difficulties connecting different features. Unexpected errors could also affect recommendations or the user experience. To manage these risks, we will test the app regularly, handle API errors properly, use reliable data sources, and keep backup options where possible. We will also test each feature separately before combining everything into the final product. 
 
-WHAT: The main risks before Week 11 are an unfamiliar weather API, limited access to some devices, and free hosting limits. We will test the API early, with sample weather data as a fallback if it fails. We will test on available Galaxy devices and use an Android emulator for devices we cannot access. We will check hosting limits early and reduce usage or move to another free host if needed. For S0, we chose Samsung Galaxy Store because Wearthly targets Galaxy users. Publishing has no sign-up or annual fee, and we will use its beta testing before submitting early for review.
+WHAT: The main risks before Week 11 are an unfamiliar weather API, limited access to some devices, and free hosting limits. We will test the API early, with sample weather data as a fallback if it fails. We will test on available Galaxy devices and use an Android emulator for devices we cannot access. We will check hosting limits early and reduce usage or move to another free host if needed. For S0, we chose Samsung Galaxy Store because Weatherly targets Galaxy users. Publishing has no sign-up or annual fee, and we will use its beta testing before submitting early for review.
 
 
 WEAK: he project may face unexpected technical issues, such as API failures, device compatibility problems, or hosting limits. We will identify these risks early, test them during development, and prepare backup solutions to avoid delays. 
@@ -225,4 +225,6 @@ STRONG: Samsung Galaxy Store has no sign-up or annual publishing fee. We will be
 
 ## Change log (about 300 characters)
 
-2026-10-03 — Initial version of the proposal. No changes recorded yet.
+2026-10-03 — §11: removed the paid subscription idea because Wearthly is a student project with no commercial intent.
+2026-10-03 — §12: changed the planned store from Google Play to Samsung Galaxy Store because it has no sign-up or annual publishing fee.
+2026-10-03 — Initial version of the proposal.
