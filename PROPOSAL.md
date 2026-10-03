@@ -8,7 +8,7 @@
 | **Section** | *en* |
 | **Project** | *Weatherly — Weather Forecasting and Avatar Styling App* |
 
-<!--
+
 WHAT A PROPOSAL IS FOR
 A proposal convinces a busy reader — an instructor, an investor, a manager — in five
 minutes that you know what you are building, for whom, and why it can be finished. It is
@@ -49,7 +49,7 @@ RULES
   Mermaid on the page and the checker parses it; a diagram that does not parse is shown as
   raw text on GitHub and fails the check. The block must appear directly under the heading
   that asks for it.
--->
+
 
 ---
 
@@ -228,3 +228,4 @@ STRONG: Samsung Galaxy Store has no sign-up or annual publishing fee. We will be
 2026-10-03 — §11: removed the paid subscription idea because Wearthly is a student project with no commercial intent.
 2026-10-03 — §12: changed the planned store from Google Play to Samsung Galaxy Store because it has no sign-up or annual publishing fee.
 2026-10-03 — Initial version of the proposal.
+
