@@ -190,7 +190,7 @@ STRONG:AccuWeather is a free weather service that provides forecasts and alerts,
 
 
 ### 10. Comparison and your advantage (about 500 characters)
-<!--
+
 WHY: Users already have weather apps and websites that provide forecasts, but these tools usually focus mainly on weather information. Wearthly brings forecasts, alerts, outfit suggestions, activity and place recommendations, and avatar customization together in one product. Instead of checking different apps to understand the weather, decide what to wear, and plan activities, users can get these recommendations in one place, making daily weather planning simpler and more convenient.
 
 WHAT: Compared with three existing weather apps, Wearthly focuses on the features that are most useful to everyday users: cost, weather forecasts, personalized outfit suggestions, and activity or place recommendations. While the competitors mainly provide weather information and alerts, Wearthly combines these features with personalized suggestions in one product. Users can check the weather, decide what to wear, and find ideas for what to do without switching between different apps. This gives users a simple reason to choose Wearthly when they want more than just a basic weather forecast.
