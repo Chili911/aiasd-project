@@ -1,20 +1,18 @@
 # Week 3 — AI log
 
-> **Worth 2 points, and a person reads it.** Not graded on how much you used AI — on
-> whether you could tell a good objection from a bad one. The Evidence block is not
-> optional. Delete these quoted instructions before you commit.
 
-The investor’s objection that our market evidence is too weak is valid. Our initial plan relied on only 20 students, so I changed §8 to clearly state that we will survey 20 university students about their weather-checking habits, outfit and activity searches, and interest in Weatherly’s recommendations. I also added that a named public source will be used to estimate the wider market. I recorded this change in the Change log. The objection that Weatherly has no clear advantage over existing apps is not fully correct. I checked AccuWeather’s features and found that it provides weather forecasts and alerts, while Weatherly is designed to combine weather information with outfit, activity, and place recommendations. This feature difference is documented in §9 and §10. Therefore, the proposal has a specific difference from the competitor even though further user testing is still needed to prove how valuable that difference is.
+<!-- " The investor’s objection that our market evidence is too weak is valid. Our initial plan relied on only 20 students, so I changed §8 to clearly state that we will survey 20 university students about their weather-checking habits, outfit and activity searches, and interest in Weatherly’s recommendations. I also added that a named public source will be used to estimate the wider market. I recorded this change in the Change log. The objection that Weatherly has no clear advantage over existing apps is not fully correct. I checked AccuWeather’s features and found that it provides weather forecasts and alerts, while Weatherly is designed to combine weather information with outfit, activity, and place recommendations. This feature difference is documented in §9 and §10. Therefore, the proposal has a specific difference from the competitor even though further user testing is still needed to prove how valuable that difference is."  -->
 
 
-WEAK: The AI said that Weatherly may have a small market. I think many students would use it, so I disagree.
+<!-- WEAK: The AI said that Weatherly may have a small market. I think many students would use it, so I disagree. -->
 
-STRONG: Objection 1 said that Weatherly may not have enough market evidence. I agreed with this objection because our initial test only includes 20 students. I changed §8 to make the survey more specific and added a plan to use a named public source to estimate the wider market. I recorded this change in the Change log. Objection 2 said that Weatherly does not have a clear advantage over existing apps. I checked AccuWeather’s features and found that it provides weather forecasts and alerts, while Weatherly combines weather information with outfit, activity, and place recommendations. This difference is explained in §9 and §10. 
+<!-- STRONG: Objection 1 said that Weatherly may not have enough market evidence. I agreed with this objection because our initial test only includes 20 students. I changed §8 to make the survey more specific and added a plan to use a named public source to estimate the wider market. I recorded this change in the Change log. Objection 2 said that Weatherly does not have a clear advantage over existing apps. I checked AccuWeather’s features and found that it provides weather forecasts and alerts, while Weatherly combines weather information with outfit, activity, and place recommendations. This difference is explained in §9 and §10.   -->
 
 
 **Assistant used and what I gave it**
 
-Assistant used was ChatGPT. I gave it my PROPOSAL.md Part B (§8–§12) as it stood and asked: “You are an investor deciding whether to fund this. Give me the three strongest reasons to say no. Be specific to this proposal, not generic.”
+Assistant used was ChatGPT. I gave it my PROPOSAL.md Part B (§8–§12) as it stood and asked: “You are an investor deciding whether to fund this. If you were an investor, what are the three main reasons you would not invest in this project? Please give specific reasons based on our proposal, not general reasons.
+
 
 **The three objections**
 

@@ -22,7 +22,7 @@ Ders, üretimi değil değerlendirmeyi notlandırır: asistanın ne ürettiğini
 Dersi tamamlayan öğrenci:
 
 1. **Proje önerisi hazırlar.** Öğrenci kendi yaşadığı gerçek bir problemden yola çıkar; problemi ve çözümü anlatan, paydaşları adlandıran ve kullanım senaryolarını veren Bölüm A'yı, pazarı ve rakipleri inceleyen, ticari potansiyeli değerlendiren ve teknik riskleri sıralayan Bölüm B'yi yazar ve öneriyi beş dakikada pitch eder (2–3. Hafta).
-2. **Gereksinim mühendisliği yapar.** Öğrenci fonksiyonel ve fonksiyonel olmayan gereksinimleri bir SRS (Software Requirements Specification, sistemin ne yapması gerektiğini listeleyen belge) olarak yönetir. Her gereksinim REQ-NNN biçiminde bir kimlik taşır, izlenebilirdir ve belirli bir noktada dondurulur; öğrenci sonraki her değişikliği tarihli bir değişiklik günlüğüyle görünür kılar (2–3. Hafta).
+2. **Gereksinim mühendisliği yapar.** Öğrenci fonksiyonel ve fonksiyonel olmayan gereksinimleri bir SRS (Software Requirements Specification, sistemin ne yapması gerektiğini listeleyen belge) olarak yönetir. Her gereksinim REQ-NNN biçiminde bir kimlik taşır, izlenebilirdir, verildikten sonra anlamını korur ve prototip incelemesinden sonra taban çizgisine (baseline) girer; öğrenci sonraki her değişikliği tarihli bir değişiklik günlüğüyle görünür kılar; kabul ölçütlerinden test case'ler yazılır ve prototip üzerinde yürütülür (2–5. Hafta).
 3. **Tasarlar ve prototipler.** Öğrenci mimariyi, veri modelini, sistem bağlam diyagramını ve dağıtım diyagramını repoda Mermaid ile (GitHub'ın markdown dosyasının içinde çizdiği, metin tabanlı bir diyagram gösterimi) çizer, tıklanabilir bir prototip kurar ve onu akran incelemesinden sonra revize eder (4–5. Hafta).
 4. **Full-stack uygulama geliştirir.** Öğrenci e-posta kodu ya da OTP ile giriş yapılan bir sunucu, bir web istemcisi ve bir mobil istemci geliştirir; aynı özellik üç katmanda birden çalışır (5. ve 8. Hafta).
 5. **Mobil uygulama geliştirir.** Öğrenci mobil istemciyi Flutter, React Native–Expo, Kotlin ya da Swift ile geliştirir; istemci telefonda çalışır ve mağazaya hazırdır (7–8. Hafta).
@@ -46,7 +46,7 @@ Araçlar: Python 3.12, Git/GitHub, VS Code, Streamlit, açık ağırlıklı bir 
 
 | Kalem | Puan | Açıklama |
 |---|---|---|
-| Haftalık Projeler | 60 | 12 hafta × 10 puan, 60'a ölçeklenir. Her hafta 5 puan dersin sonunda, 5 puan Cumartesi 23:59'da repodan okunur (1. Hafta 5 puandır ve tamamı Cumartesi okunur). Otomatik kontroller derste 5, Cumartesi 2 puan verir; öğretim üyesi yapay zekâ günlüğü (2) ve commit disiplini (1; 5. hafta, 10. hafta ve dönem sonunda tüm push geçmişine bakılarak verilir) puanlarını verir. Kaçırılan ders için telafi yoktur. |
+| Haftalık Projeler | 60 | 12 hafta × 10 puan, 60'a ölçeklenir. Her hafta 5 puan dersin sonunda, 5 puan Cumartesi 23:59'da repodan okunur (1. Hafta 5 puandır ve tamamı Cumartesi okunur). Otomatik kontroller derste 5, Cumartesi 2 puan verir; öğretim üyesi yapay zekâ günlüğü (2) ve commit disiplini (1; her hafta değerlendirilir: derste farklı zamanlarda birkaç push (en az üç), her birinde yeni iş, ders dışında iş ilerledikçe yapılmış, her birinde biraz yeni iş olan birkaç commit (bir commit'in bitmiş bir parça olması gerekmez); şüpheli bir durumda önceki haftalara da bakılır) puanlarını verir. Kaçırılan ders için telafi yoktur. |
 | Mağaza Bonusu | 15 | Yayın bonusu. Mağaza izi S0–S6 (öğrenci mağazayı seçer, geliştirici hesabı açar, uygulama kaydını oluşturur, test kanalına build yükler, testçi kaydeder, uygulamayı gönderir ve uygulama canlıya çıkar) her adımın teslim haftasında adım adım notlandırılır. O hafta yardım eden sınıf arkadaşları (katkıcılar) öğrencinin notundan pay kazanır. |
 | Sunum | 15 | 13–14. Haftalarda proje savunması. Öğrenci uygulamayı sınav yapanın önünde mağazadan yükler ve koddaki ve belgelerdeki kararlar hakkındaki soruları yanıtlar. Uygulama geliştirme makinesinden değil, mağaza build'inden çalıştırılır. |
 | Final Sınavı | 40 | Üniversitenin sınav döneminde yazılı final sınavı. SDLC belgelerini, yapay zekâ günlüğü pratiğini ve on iki haftanın teknik içeriğini kapsar. |
@@ -65,9 +65,9 @@ Araçlar: Python 3.12, Git/GitHub, VS Code, Streamlit, açık ağırlıklı bir 
 |---|---|---|
 | 1 | 22/09 · 23/09 | Temeller: öğrenciler araçları kurar, Git/GitHub'ı öğrenir ve LLM'ler (büyük dil modelleri) ile transformer'larla ilk kez tanışır |
 | 2 | 29/09 · 30/09 | Teklif Bölüm A ve Gereksinimler (SRS): öğrenciler problemi ve çözümü anlatır, paydaşları adlandırır ve kullanım senaryolarını yazar |
-| 3 | 06/10 · 07/10 | Dörtlü gruplarda pitch ve inceleme; öğrencilerin pazarı ve rakipleri incelediği, ticari potansiyeli değerlendirdiği ve riskleri sıraladığı Teklif Bölüm B; mağaza seçilir (S0); gereksinimler dondurulur |
-| 4 | 13/10 · 14/10 | Tasarım: öğrenciler mimariyi, veri modelini ve sistem bağlamını çizer, tıklanabilir prototipi kurar ve geliştirici hesabını açar (S1) |
-| 5 | 20/10 · 21/10 | Prototip revizyonu; geliştirme sunucu iskeleti ve e-posta kodu / OTP ile girişle başlar |
+| 3 | 06/10 · 07/10 | Dörtlü gruplarda pitch ve inceleme; öğrencilerin pazarı ve rakipleri incelediği, ticari potansiyeli değerlendirdiği ve riskleri sıraladığı Teklif Bölüm B; mağaza seçilir (S0); bundan sonra bir gereksinim id'sinin anlamı değişmez |
+| 4 | 13/10 · 14/10 | Tıklanabilir prototip ve test case'ler: öğrenciler kabul ölçütlerinden test case'ler yazar, bunları prototip üzerinde yürütür ve gereksinimleri günceller; geliştirici hesabı açılır (S1) |
+| 5 | 20/10 · 21/10 | Tasarım ve API sözleşmesi; geliştirme sunucu iskeleti ve e-posta kodu / OTP ile girişle başlar; gereksinimler ve test case'ler taban çizgisi (baseline) olur |
 | 6 | 27/10 · 28/10 | Sohbet botu I, motor: öğrenciler Ollama + Qwen'i çalıştırır, BGE-M3 gömmelerini oluşturur ve chat endpoint'ini yazar; uygulama kaydı oluşturulur (S2) |
 | 7 | 03/11 · 04/11 | Sohbet botu II: sohbet botu web ve mobil istemcilere girer; testler; CI |
 | 8 | 10/11 · 11/11 | Projenin kendi çekirdek özelliği üç katmanda birden çalışır; ilk build test kanalına çıkar (S3) |

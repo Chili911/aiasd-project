@@ -21,11 +21,11 @@ you are talking, the slide is only the skeleton.                 olsun: siz konu
 Delete this comment when you are done.                           Bitince bu yorumu silin.
 -->
 
-# [Weatherly]
+# Weatherly
 
-**[Weatherly is for students and young adults who want quick, personalized weather information to help them plan what to wear, what to do, and where to go.]**
+**Weatherly is for students and young adults who want quick, personalized weather information to help them plan what to wear, what to do, and where to go.**
 
-[Khadja Sabir] · [Software Engineering ] · Week 3
+Khadja Sabir · Software Engineering  · Week 3
 
 ---
 
@@ -40,13 +40,13 @@ Delete this comment when you are done.                           Bitince bu yoru
      ne yapmaya çalışıyordu, onun yerine ne yaptı, neye mal oldu. Son seferi
      söyleyemiyorsanız bu sizin sorununuz değildir — projeyi değiştirin. -->
 
-- **When:** [Around September 17, 2026 ]
+- **When:** Around September 17, 2026 
 
-- **Who / where / doing what:** [My sister was getting ready to go out while I was at home. Before leaving, she checked the weather forecast to decide whether she should take an umbrella.]
+- **Who / where / doing what:** My sister was getting ready to go out while I was at home. Before leaving, she checked the weather forecast to decide whether she should take an umbrella.
 
-- **What they did instead:** [The forecast said it would be windy but would not rain, so she left without an umbrella. It started raining heavily, and she had to stay at a restaurant until the rain became lighter.]
+- **What they did instead:** The forecast said it would be windy but would not rain, so she left without an umbrella. It started raining heavily, and she had to stay at a restaurant until the rain became lighter.
 
-- **What it cost:** [She lost about an hour waiting, and the buses were also slower because of the rain.]
+- **What it cost:** She lost about an hour waiting, and the buses were also slower because of the rain.
 
 ---
 
@@ -61,11 +61,11 @@ Delete this comment when you are done.                           Bitince bu yoru
 
 | # | Name | How you know them | Why they have the same problem |
 |---|------|-------------------|--------------------------------|
-| 1 |[Fatima] | [Older Sister] | [Because she goes out more often.] |
-| 2 | [Sara] | [Classmate]     | [ Because she likes dressing up but it takes time] |
-| 3 | [Omar] | [Younger Brother] | [Because he wants to go out and play football but weather changes unexpexted and he gets sick often. ] |
-| 4 | [Halima] | [Classmate] | [Because she lives far she needs to know the weather and if busses will be slow or not.] |
-| 5 | [Safia] | [Younger Sister] | [Because she enjoys drawing in nature but because of unexpected change of weather her drawing went all bad.] |
+| 1 |Fatima | Older Sister   | Because she goes out more often. |
+| 2 | Sara |   Classmate     |  Because she likes dressing up but it takes time |
+| 3 | Omar | Younger Brother | Because he wants to go out and play football but weather changes unexpexted and he gets sick often.  |
+| 4 | Halima | Classmate    | Because she lives far she needs to know the weather and if busses will be slow or not. |
+| 5 | Safia | Younger Sister | Because she enjoys drawing in nature but because of unexpected change of weather her drawing went all bad. |
 
 ---
 
@@ -79,11 +79,11 @@ Delete this comment when you are done.                           Bitince bu yoru
      kelimesi kelimesine — denetleyici karşılaştırır. Sonra §4'teki "yapmayacağı"
      cümle — projeyi bitirilebilir tutan cümle. -->
 
-1. [REQ-002 — The app displays the weather forecast for the user's selected location for the current day and the next day.]
-2. [REQ-003 — The app recommends suitable clothing and accessories based on the forecast.]
-3. [REQ-006 — Every screen is usable on a phone about 390 px wide without horizontal scrolling]
+1. REQ-002 — The app displays the weather forecast for the user's selected location for the current day and the next day.
+2. REQ-003 — The app recommends suitable clothing and accessories based on the forecast.
+3. REQ-006 — Every screen is usable on a phone about 390 px wide without horizontal scrolling
 
-**It does not:** [provide weather forecasts beyond the current day and the next day.]
+**It does not:** provide weather forecasts beyond the current day and the next day.
 
 ---
 
@@ -96,16 +96,10 @@ Delete this comment when you are done.                           Bitince bu yoru
      bağlayın — ya da aşağıya metin kutularıyla çizin. Araç taslağı değil,
      yapay zekâ değil: kendi eliniz, beş dakika. Telefon çerçevesi 390 px (REQ-006). -->
 
-![main screen](week03/screen.jpg)
+!main screen(week03/screen.jpg)
 
-<!-- or / ya da:
-+----------------------------+
-|  [title bar]               |
-|  [what the user sees first]|
-|  [the one button]          |
-+----------------------------+
--->
 
+```text
 
 +--------------------------------+
 |           WEATHERLY             |
@@ -128,7 +122,7 @@ Delete this comment when you are done.                           Bitince bu yoru
 |                                |
 +--------------------------------+
 
-
+```
 
 ---
 
@@ -137,10 +131,10 @@ Delete this comment when you are done.                           Bitince bu yoru
 <!-- One honest doubt. The thing you would ask an experienced developer.
      Dürüst bir şüphe. Deneyimli bir geliştiriciye soracağınız şey. -->
 
-**[The doubt, as a question.]**
+*The doubt, as a question.**
 
-[Weatherly depends on accurate weather data to give useful clothing recommendations.
-I am worried that incorrect or delayed weather information could make the recommendations unreliable.]
+Weatherly depends on accurate weather data to give useful clothing recommendations.
+I am worried that incorrect or delayed weather information could make the recommendations unreliable.
 
 ---
 

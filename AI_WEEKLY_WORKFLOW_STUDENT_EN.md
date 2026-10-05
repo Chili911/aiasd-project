@@ -127,7 +127,7 @@ A message such as "update", "fix" or "asdf" says nothing about what happened, an
 messages like these cost you the commit-hygiene point (the point for commit discipline
 that §3 describes).
 
-**Push at 10:00, at 11:00 and at 11:50**, which means three pushes in every lecture,
+**Push at 10:00, at 11:00 and at 11:50**, which means at least three pushes in every lecture,
 whatever state the work is in. At 10:00 and at 11:00 I look at the class board (the
 projected table that shows where every student's repository stands) to see where
 everyone is; the 11:50 push is the one that counts for the lecture's points. A push
@@ -160,13 +160,16 @@ worth **5 points — half the week**.
 One student works on one computer with one GitHub account. Work done on a classmate's
 machine or under a classmate's GitHub session earns nothing for the lecture.
 
-**Commit discipline (1 point a week) is not judged week by week.** At Week 5, at Week 10
-and at the end of term I look at your whole push history and award those points in one
-go. I ask three questions: did the work grow over time, is there real progress from one
-push to the next, and was the text worked on or was it pasted in finished? A single push
-at the end of each lecture, or text that arrives in one piece, scores nothing there,
-however many weeks it repeats. I may also ask you a two-minute question about your
-project in any lecture. Push as you work, every week, and this takes care of itself.
+**Commit discipline (1 point a week) is judged every week.** In the lecture I look for
+several pushes at different times (at least three), each with new work in it. Outside the lecture you may work in one sitting; what I
+look for is several commits made as you work, each with some new work in it and a message
+that says what changed. A commit does not need to be a finished part. I ask three questions: did the work grow step by step, is there real
+progress from one commit to the next, and was the text worked on or was it pasted in
+finished? A single
+commit at the end of the week, or text that arrives in one piece, scores nothing. When
+something in a week looks doubtful, I also look back at your earlier weeks before I
+decide. I may also ask you a two-minute question about your project in any lecture.
+Commit as you work, every week, and this takes care of itself.
 
 ### Attendance, and what happens if you are not here
 
@@ -199,7 +202,10 @@ time, and your state at the deadline decides the other 5 points.
 You write one file per week, inside that week's folder, so Week 1 has
 `week01/ai_log_01.md`, and so on. The file arrives with the rest of the documents in the
 week folder, and you fill it in. You write which assistant you used, what it got right,
-what you had to correct, and what you learned.
+what you had to correct, and what you learned. **You write it yourself, in your own
+words**: outside the Evidence block no assistant is used, not even to correct the
+language. Your English or Turkish is not graded; a log written by an assistant earns at
+most 1 of the 2 points, however polished it is.
 
 **The Evidence block is required.** Paste the actual exchange under your claim, inside
 the code fence (the block between two lines of three backticks): the prompt you sent and
@@ -235,9 +241,11 @@ integration). A green tick on your Saturday state is worth **2 points**.
 
 **Consistency and commit discipline — 1 point.** Does this week's work actually follow
 from the requirements and the design that you wrote in previous weeks, and does your
-commit history show work spread across the week rather than one last-minute dump? If you
+commit history show the work growing step by step rather than one last-minute dump? If you
 changed your plan, did the change get a dated line in the change log of `PROPOSAL.md`?
-Changing your mind is normal and healthy, but the change must be visible. A requirement
+Changing your mind is normal and healthy, but the change must be visible. The project
+itself (its problem and its product) is fixed at the 11:50 push of the Week 3 lecture;
+after that, only its details change. A requirement
 that is silently abandoned costs the mark; a requirement that is dropped with a one-line
 justification in `ai_log_NN.md` costs nothing. That is what engineering looks like.
 

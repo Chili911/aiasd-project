@@ -70,7 +70,7 @@ catches the error.
 | Phase (weeks) | What it does well | What it reliably gets wrong | Technique that catches it |
 |---|---|---|---|
 | Proposal and requirements (2–3) | It produces lists and structure quickly: eight requirements in a minute. | It does not know your priorities or your users; it gives numbers (market size, review time) for which it has no source; and it adds features you never asked for, such as a `Payment` table in an app that takes no money. | §4, §3, §5 |
-| Design and prototype (4) | It draws diagrams, data models and screen flows from a short description. | It forgets a constraint unless you repeat it in every prompt; it adds one entity too many; it puts a field on the wrong table (for example the check-in time on the user instead of on the reservation). | §1 |
+| Prototype, test cases and design (4–5) | It draws screen flows, test cases, diagrams and data models from a short description. | It forgets a constraint unless you repeat it in every prompt; it adds one entity too many; it puts a field on the wrong table (for example the check-in time on the user instead of on the reservation). | §1 |
 | Server, login and chatbot (5–7) | It writes boilerplate code, endpoints, tests, and the glue code around Ollama. | It misses edge cases: for example, a user asks for a second login code before the first has expired, and the code sends a new one instead of refusing. It installs library versions that have since been removed or renamed, so `pip install` fails. When asked for one change, it also makes a second change it does not mention. | §2, §6, §5 |
 | The three tiers (8) | It writes each tier (server, web, mobile) correctly on its own. | It does not make the three tiers agree with each other: the same field is `room_id` on the server and `roomId` in the app; the server returns a status code that no client handles. | §7 |
 | Testing with people (9–10) | It writes test plans, bug-report templates and a list of likely failures. | It cannot know what your five testers will actually do, because it has never met them. | §8 |
@@ -109,7 +109,7 @@ wrong because one user has many reservations. I fixed it by hand; the final mode
 what failed.
 
 **In this course.** Your criteria already exist: they are the ids in `requirements.json`,
-which have been frozen since Week 3. Paste into the prompt the REQ lines that the design
+whose meaning has been fixed since Week 3 and which form your baseline from the end of Week 5. Paste into the prompt the REQ lines that the design
 or the code must satisfy. An answer that breaks a REQ is the error of the week. An answer
 that needs a REQ you do not have is recorded as a dated line in the Change log, not added
 silently.
@@ -199,7 +199,7 @@ decision.
 **In this course.** This was the Week 2 exercise: the same §3–§4 given to two assistants,
 eight requirements from each, and one wrong requirement found. The technique returns
 whenever two answers are cheap and the truth is in your own documents, for example the
-data model in Week 4 and the test plan in Week 9. The two assistants must be two of those
+data model in Week 5 and the test plan in Week 9. The two assistants must be two of those
 you set up in Week 1 (`AI_SETUP_CARD`); the free tiers are sufficient.
 
 ---
@@ -242,8 +242,8 @@ including the lines you did not ask to change. Commit each accepted change on it
 
 **Why.** "Refactor this file" returns a file in which three things you did not request have
 changed, one of them silently. A diff you can read in two minutes is a diff you can take
-responsibility for. This is also what makes your commit history readable in the Week 5
-review.
+responsibility for. This is also what makes your commit history readable when the
+week's commit-discipline point is given.
 
 **Untrained user.** *"I asked Copilot to clean up `app.py`, accepted the result, and
 pushed."*
@@ -256,8 +256,8 @@ result; commit `e41c…` contains the import changes only."*
 **In the log.** Record the change you asked for, the change you received, and what you
 refused.
 
-**In this course.** This is what the Week 5, Week 10 and end-of-term reviews of your whole
-push history look for: commits spread across the week, each one a change you can name in
+**In this course.** This is what the weekly commit-discipline point looks for: several
+commits made as you work, each one a change you can name in
 its message (for example `week05: OTP expiry check, test added`), and no single
 Saturday-night dump that could have been pasted in whole. Run `ruff check .` before every
 commit. A key in a commit costs ten points and a revoked key, as described in the workflow
@@ -396,7 +396,12 @@ The log also carries two further rules:
   last time the problem happened to you, the five people who will test your product, and
   the sentences your reviewers wrote and what you decided about them are all written by
   you alone. They concern your life and your people; an assistant cannot know them, and I
-  will ask about them.
+  will ask about them. **The AI log itself is on this list.** Everything in
+  `ai_log_NN.md` outside the Evidence block is written by you, in your own words, and
+  the assistant is not used even to improve the language. Your English or Turkish is
+  not graded; a log in plain, imperfect sentences earns full marks, a log written by an
+  assistant about itself earns at most 1. The Evidence block is the one place where the
+  assistant's words belong, pasted exactly as it wrote them.
 
 ---
 
@@ -406,8 +411,8 @@ The log also carries two further rules:
 |---|---|---|
 | 2 | Proposal Part A, requirements | §4 Cross-examination |
 | 3 | Proposal Part B | §3 The hostile reviewer (the investor) |
-| 4 | Design, data model, prototype | §1 Acceptance criteria first |
-| 5 | Server skeleton, OTP login | §2 Verify by running |
+| 4 | Clickable prototype, test cases from the acceptance criteria | §1 Acceptance criteria first |
+| 5 | Design, API contract, server skeleton, OTP login | §2 Verify by running |
 | 6 | Chatbot engine over your documents | §5 Make it cite |
 | 7 | Chatbot in the clients, tests, CI | §6 Small diffs |
 | 8 | Core feature on all three tiers | §7 Consistency across the tiers |
@@ -444,7 +449,7 @@ one of the four people in §0 is separated from the others.
    it, and your own chatbot can show the passage it used (§5, Weeks 6 and 10).
 7. You can accept the change you asked for and refuse the one you did not, within the same
    diff, and your history shows a week of named changes rather than one dump (§6, the
-   Week 5 and Week 10 reviews).
+   weekly commit-discipline point).
 8. You can find where three generated tiers disagree with each other, verify what the
    assistant found, and catch what it missed (§7, Week 8).
 9. You can write down what will go wrong before five real people test your product, and
