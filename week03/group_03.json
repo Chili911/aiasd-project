@@ -6,6 +6,6 @@
     "meeting: the day, the time and the tool of your weekly one-hour online meeting from Week 4 on, for example 'Thursday 20:00, Discord'.",
     "You may delete this block once you have read it; the checker ignores it."
   ],
-  "group": ["", "", "", ""],
-  "meeting": ""
+  "group": ["230504522", "230504566", "230504659", "230504603"],
+  "meeting": "Thursday , 15:30 in zoom"
 }

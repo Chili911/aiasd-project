@@ -20,7 +20,7 @@ Delete this comment when you are done.
 | # | Screen | What the user does there | Requirements |
 |---|---|---|---|
 | 1 | Log in | enters the e-mail address and the 4-digit code from the e-mail | REQ-001, REQ-006 |
-| 2 | [screen name] | [what the user does there] | [REQ ids] |
-| 3 | [screen name] | [what the user does there] | [REQ ids] |
-| 4 | [screen name] | [what the user does there] | [REQ ids] |
-| 5 | [screen name] | [what the user does there] | [REQ ids] |
+| 2 | Location Selector | selects a location, views the current and next day's forecast, and reads any severe weather alerts | REQ-002, REQ-006 |
+| 3 | Weather Dashboard | views current and next day's forecast along with active severe weather alerts| REQ-002, REQ-006, REQ-007, REQ-008 |
+| 4 | Daily Outfit Suggestions | views weather-appropriate clothing and accessory recommendations based on forecast data | REQ-003, REQ-006, REQ-008 |
+| 5 | Avatar Customizer | selects gender, body size, and customizes hair, makeup, and clothing options | REQ-004, REQ-005, REQ-006|
