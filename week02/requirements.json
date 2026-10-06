@@ -56,7 +56,16 @@
       "functional": false,
       "priority": "should",
       "acceptance": "Measure the time from opening the weather screen to displaying the forecast and recommendations under a normal network connection; the information appears within 3 seconds."
-    }
+    },
+
+     {
+     "id": "REQ-009",
+     "description": "The app uses readable text and clearly identifiable buttons and controls so that users can easily understand and interact with the interface.",
+     "functional": false,
+     "priority": "should",
+     "acceptance": "All important text is readable, buttons and controls are clearly distinguishable, and users can identify the purpose of each main action without confusion."
+     }
+
   ] 
 } 
 

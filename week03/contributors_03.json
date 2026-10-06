@@ -8,8 +8,9 @@
   ],
   "week": 3,
   "contributors": [
-    { "student_id": "230504551", "role": "reviewer", "what": "You should add a 14-day forecast", "accepted": false, "why": "I did not accept this because it would increase the project scope and Weatherly currently focuses on the current and next day's weather" },
+    { "student_id": "230504566", "role": "reviewer", "what": "You should add a 14-day forecast", "accepted": false, "why": "I did not accept this because it would increase the project scope and Weatherly currently focuses on the current and next day's weather" },
     { "student_id": "230504522", "role": "reviewer", "what": "I think the app should show tomorrow's weather because I usually plan my clothes the night before", "accepted": false, "why": "I did not accept this because it would increase the project scope and Weatherly currently focuses on the current and next day's weather" },
-    { "student_id": "230504610", "role": "reviewer", "what": "You could add a light mode and dark mode so users can choose the theme they prefer.", "accepted": true, "why": "I accepted this feedback because it would improve the user experience and allow for personalization." }
+    { "student_id": "230504659", "role": "reviewer", "what": "You could add a light mode and dark mode so users can choose the theme they prefer.", "accepted": true, "why": "I accepted this feedback because it would improve the user experience and allow for personalization." }
+
   ]
 }

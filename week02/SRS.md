@@ -105,10 +105,8 @@ Acceptance: when the user selects an item, the selected hairstyle, makeup, or cl
 REQ-005 — The user can change the avatar's body size and choose from available male and female avatar options. — should — UC3
 Acceptance: the user opens the avatar customization screen, selects an available avatar type, and changes its size; the avatar updates to show the selected appearance.
 
-
-REQ-007 — The app sends alerts when severe weather or potentially dangerous natural weather events are expected. — should — UC4
-Acceptance: when severe weather data is available for the selected location, the app displays an alert describing the event and the recommended safety action.
-
+REQ-007 — The user can select a location to view its weather forecast. — must — U1
+Acceptance: when the user selects a city or location, the app displays the weather forecast for that selected location.
 
 ## 5. Non-functional requirements
 
@@ -117,6 +115,9 @@ Acceptance: every screen opened on a 390 px wide phone or browser phone view has
 
 REQ-008 — The app loads the weather forecast and recommendations within 3 seconds under normal network conditions. — should
 Acceptance: the time from opening the weather screen to displaying the forecast and recommendations is measured under a normal network connection; the information appears within 3 seconds.
+
+REQ-009 — The app protects the user's personal information and does not expose it to other users. — should
+Acceptance: a user's e-mail address, avatar settings, and other personal information can only be accessed by the logged-in user and are not visible to other users.
 
 ## 6. Constraints and assumptions
 
