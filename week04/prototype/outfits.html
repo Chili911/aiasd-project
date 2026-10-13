@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +17,15 @@
 
     <section>
       <h2>What should I wear?</h2>
-      <p><strong>Istanbul · Today</strong></p>
-      <p>22°C · Sunny · 10% chance of rain</p>
+
+      <label for="city">Choose your city</label>
+      <select id="city">
+        <option value="Istanbul">Istanbul</option>
+        <option value="Ankara">Ankara</option>
+      </select>
+
+      <p><strong id="city-today">Istanbul · Today</strong></p>
+      <p id="today-weather">22°C · Sunny · 10% chance of rain</p>
     </section>
 
     <section>
@@ -26,29 +33,29 @@
 
       <article>
         <h3>👕 Clothing</h3>
-        <p>Wear a comfortable T-shirt with lightweight trousers or a long skirt.</p>
+        <p id="clothing">Wear a comfortable T-shirt with lightweight trousers or a long skirt.</p>
       </article>
 
       <article>
         <h3>🧥 Extra layer</h3>
-        <p>A light cardigan or jacket is useful if the weather feels cooler.</p>
+        <p id="layer">A light cardigan or jacket is useful if the weather feels cooler.</p>
       </article>
 
       <article>
         <h3>👟 Footwear</h3>
-        <p>Comfortable sneakers or flats are suitable for a sunny day.</p>
+        <p id="footwear">Comfortable sneakers or flats are suitable for a sunny day.</p>
       </article>
 
       <article>
         <h3>☂️ What to bring</h3>
-        <p>An umbrella is not essential today because the chance of rain is only 10%.</p>
+        <p id="bring">An umbrella is not essential today because the chance of rain is only 10%.</p>
       </article>
     </section>
 
     <section>
       <h2>Tomorrow's reminder</h2>
-      <p>18°C · Rainy · 70% chance of rain</p>
-      <p><strong>Bring an umbrella tomorrow</strong> and consider water-resistant footwear.</p>
+      <p id="tomorrow-weather">18°C · Rainy · 70% chance of rain</p>
+      <p id="tomorrow-advice"><strong>Bring an umbrella tomorrow</strong> and consider water-resistant footwear.</p>
     </section>
 
     <nav class="tabs" aria-label="Main navigation">
@@ -58,6 +65,48 @@
       <a href="avatar.html">Avatar</a>
     </nav>
   </main>
+
+  <script>
+    const cityData = {
+      Istanbul: {
+        today: "22°C · Sunny · 10% chance of rain",
+        tomorrow: "18°C · Rainy · 70% chance of rain",
+        clothing: "Wear a comfortable T-shirt with lightweight trousers or a long skirt.",
+        layer: "A light cardigan or jacket is useful if the weather feels cooler.",
+        footwear: "Comfortable sneakers or flats are suitable for a sunny day.",
+        bring: "An umbrella is not essential today because the chance of rain is only 10%.",
+        tomorrowAdvice: "Bring an umbrella tomorrow and consider water-resistant footwear."
+      },
+      Ankara: {
+        today: "16°C · Cloudy · 20% chance of rain",
+        tomorrow: "12°C · Heavy rain · 80% chance of rain",
+        clothing: "Wear long trousers or a long skirt with a long-sleeved top.",
+        layer: "Bring a warm jacket or cardigan because the weather is cooler.",
+        footwear: "Choose comfortable closed shoes to keep your feet warm.",
+        bring: "An umbrella is a good idea because there is a 20% chance of rain.",
+        tomorrowAdvice: "Heavy rain is expected tomorrow. Bring an umbrella and wear water-resistant footwear."
+      }
+    };
+
+    const citySelect = document.getElementById("city");
+
+    function updateOutfit() {
+      const city = citySelect.value;
+      const weather = cityData[city];
+
+      document.getElementById("city-today").textContent = city + " · Today";
+      document.getElementById("today-weather").textContent = weather.today;
+      document.getElementById("tomorrow-weather").textContent = weather.tomorrow;
+      document.getElementById("clothing").textContent = weather.clothing;
+      document.getElementById("layer").textContent = weather.layer;
+      document.getElementById("footwear").textContent = weather.footwear;
+      document.getElementById("bring").textContent = weather.bring;
+      document.getElementById("tomorrow-advice").textContent = weather.tomorrowAdvice;
+    }
+
+    citySelect.addEventListener("change", updateOutfit);
+    updateOutfit();
+  </script>
 </body>
 </html>
-```
+

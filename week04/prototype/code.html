@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Enter the code</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enter the code | Weatherly</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- serves: REQ-001, REQ-006 -->
-<main class="phone">
-  <h1>Enter the code</h1>
-  <p>We sent a 4-digit code to your e-mail address. It is valid for 10 minutes.</p>
-  <p class="note">Prototype: the code is always 1234.</p>
-  <form id="code-form">
-    <label for="code">Code</label>
-    <input id="code" inputmode="numeric" maxlength="4" required>
-    <p id="wrong" class="error hidden">Wrong code. Check the e-mail and try again.</p>
-    <button class="button" type="submit">Log in</button>
-  </form>
-  <a class="button secondary" href="index.html">Send a new code</a>
-</main>
-<script>
-  // A prototype has no server, so the right code is fixed: a tester can try both paths.
-  document.getElementById("code-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    if (document.getElementById("code").value === "1234") {
-      window.location.href = "home.html";
-    } else {
-      document.getElementById("wrong").classList.remove("hidden");
-    }
-  });
-</script>
+  <!-- serves: REQ-001, REQ-006 -->
+  <main class="phone">
+    <h1>Verify your e-mail</h1>
+    <p>Enter the 4-digit verification code sent to your e-mail address.</p>
+    <p class="note">Prototype: the correct code is always 1234.</p>
+
+    <form id="code-form">
+      <label for="code">Verification code</label>
+      <input
+        id="code"
+        name="code"
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]{4}"
+        minlength="4"
+        maxlength="4"
+        required
+        placeholder="Enter 4-digit code"
+      >
+
+      <p id="wrong" class="error hidden">Incorrect code. Please try again.</p>
+
+      <button class="button" type="submit">Log in</button>
+    </form>
+
+    <a class="button secondary" href="index.html">Send a new code</a>
+  </main>
+
+  <script>
+    // Fixed code for prototype testing; no server or real email is used.
+    document.getElementById("code-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const enteredCode = document.getElementById("code").value;
+      const errorMessage = document.getElementById("wrong");
+
+      if (enteredCode === "1234") {
+        window.location.href = "home.html";
+      } else {
+        errorMessage.classList.remove("hidden");
+      }
+    });
+  </script>
 </body>
 </html>
