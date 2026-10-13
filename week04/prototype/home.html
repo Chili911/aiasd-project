@@ -1,20 +1,61 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weatherly | Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- serves: [the REQ ids that this screen serves] -->
-<main class="phone">
-  <h1>[Home screen]</h1>
-  <p>[What the user sees first after logging in. Replace this screen with your own, and link it to the screens of your main flow.]</p>
-  <nav class="tabs">
-    <a href="home.html">Home</a>
-    <a href="index.html">Log out</a>
-  </nav>
-</main>
+  <!-- serves: REQ-002, REQ-006, REQ-007, REQ-008 -->
+  <main class="phone">
+    <header>
+      <h1>WEATHERLY</h1>
+      <p>Your weather, your day.</p>
+    </header>
+
+    <section aria-labelledby="location-heading">
+      <h2 id="location-heading">Istanbul, Türkiye</h2>
+      <p>Tuesday · Current weather</p>
+      <h2>22°C · Sunny</h2>
+      <p>Feels like 21°C</p>
+      <p>Humidity: 55%</p>
+    </section>
+
+    <section aria-labelledby="forecast-heading">
+      <h2 id="forecast-heading">Your forecast</h2>
+
+      <article>
+        <h3>Today</h3>
+        <p>22°C · Sunny</p>
+        <p>Chance of rain: 10%</p>
+      </article>
+
+      <article>
+        <h3>Tomorrow</h3>
+        <p>18°C · Rainy</p>
+        <p>Chance of rain: 70%</p>
+        <a href="outfits.html">See tomorrow's outfit suggestions</a>
+      </article>
+    </section>
+
+    <section aria-labelledby="alert-heading">
+      <h2 id="alert-heading">Weather alerts</h2>
+      <p class="note">
+        Heavy rain expected tomorrow. Bring an umbrella and allow extra
+        time for your journey.
+      </p>
+    </section>
+
+    <nav class="tabs" aria-label="Main navigation">
+      <a href="home.html" aria-current="page">Home</a>
+      <a href="location.html">Locations</a>
+      <a href="outfits.html">Outfits</a>
+      <a href="avatar.html">Avatar</a>
+      <a href="index.html">Log out</a>
+    </nav>
+  </main>
 </body>
 </html>
+```
