@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avatar Customizer | Weatherly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- serves: REQ-004, REQ-005, REQ-006 -->
+  <main class="phone">
+    <header>
+      <h1>WEATHERLY</h1>
+      <p>Make your avatar your own.</p>
+    </header>
+
+    <section>
+      <h2>Avatar Customizer</h2>
+      <div class="card">
+        <h3 id="avatar-name">Your Avatar</h3>
+        <div id="avatar-preview" aria-live="polite">
+          <p style="font-size: 4rem; text-align: center;">👤</p>
+          <p style="text-align: center;">Your avatar preview</p>
+        </div>
+      </div>
+    </section>
+
+    <form id="avatar-form">
+      <section>
+        <h2>Appearance</h2>
+
+        <label for="gender">Avatar style</label>
+        <select id="gender" name="gender">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+
+        <label for="body-size">Body size</label>
+        <select id="body-size" name="body-size">
+          <option value="slim">Slim</option>
+          <option value="average" selected>Average</option>
+          <option value="plus-size">Plus-size</option>
+        </select>
+
+        <label for="hair">Hair style</label>
+        <select id="hair" name="hair">
+          <option value="short">Short hair</option>
+          <option value="long" selected>Long hair</option>
+          <option value="curly">Curly hair</option>
+          <option value="covered">Head covering</option>
+          <option value="none">No visible hair</option>
+        </select>
+
+        <label for="makeup">Makeup</label>
+        <select id="makeup" name="makeup">
+          <option value="none" selected>None</option>
+          <option value="natural">Natural</option>
+          <option value="bold">Bold</option>
+        </select>
+
+        <label for="clothes">Clothing style</label>
+        <select id="clothes" name="clothes">
+          <option value="casual" selected>Casual</option>
+          <option value="modest">Modest</option>
+          <option value="sporty">Sporty</option>
+          <option value="formal">Formal</option>
+        </select>
+
+        <button class="button" type="submit">Update Avatar Preview</button>
+      </section>
+    </form>
+
+    <p id="update-message" role="status" aria-live="polite"></p>
+
+    <nav class="tabs" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="location.html">Locations</a>
+      <a href="outfits.html">Outfits</a>
+      <a href="avatar.html" aria-current="page">Avatar</a>
+    </nav>
+  </main>
+
+  <script>
+    const avatarForm = document.getElementById("avatar-form");
+
+    avatarForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const gender = document.getElementById("gender").value;
+      const bodySize = document.getElementById("body-size").value;
+      const hair = document.getElementById("hair").value;
+      const makeup = document.getElementById("makeup").value;
+      const clothes = document.getElementById("clothes").value;
+
+      const avatarIcon = gender === "female" ? "👩" : "👨";
+
+      document.getElementById("avatar-name").textContent =
+        gender === "female" ? "Female Avatar" : "Male Avatar";
+
+      document.getElementById("avatar-preview").innerHTML =
+        '<p style="font-size: 4rem; text-align: center;">' +
+        avatarIcon +
+        '</p>' +
+        '<p style="text-align: center;">' +
+        "Body size: " + bodySize.replace("-", " ") + "<br>" +
+        "Hair: " + hair.replace("-", " ") + "<br>" +
+        "Makeup: " + makeup + "<br>" +
+        "Clothing: " + clothes +
+        "</p>";
+
+      document.getElementById("update-message").textContent =
+        "Avatar preview updated!";
+    });
+  </script>
+</body>
+</html>
