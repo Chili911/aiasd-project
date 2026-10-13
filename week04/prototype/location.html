@@ -1,0 +1,136 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose Location | Weatherly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- serves: REQ-002, REQ-006 -->
+  <main class="phone">
+    <h1>Choose a Location</h1>
+    <p>Select a city to view its forecast.</p>
+
+    <form id="search-form">
+      <label for="city-search">Search city</label>
+      <input
+        id="city-search"
+        type="search"
+        placeholder="Try Istanbul or Ankara"
+        autocomplete="off"
+      >
+      <button class="button" type="submit">Search</button>
+    </form>
+
+    <p id="search-message" class="error hidden" role="status">
+      No matching locations found.
+    </p>
+
+    <section>
+      <h2>Available locations</h2>
+      <div id="city-list">
+        <button class="button city-button" type="button" data-city="Istanbul">
+          Istanbul
+        </button>
+        <button class="button city-button" type="button" data-city="Ankara">
+          Ankara
+        </button>
+      </div>
+    </section>
+
+    <section id="forecast" aria-live="polite">
+      <h2 id="forecast-city">Istanbul Forecast</h2>
+      <p id="today">Today: 22°C, sunny. Chance of rain: 10%.</p>
+      <p id="tomorrow">Tomorrow: 18°C, rainy. Chance of rain: 70%.</p>
+      <p id="alert">Severe weather alert: None.</p>
+      <a href="outfits.html">See outfit suggestions</a>
+    </section>
+
+    <nav class="tabs" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="location.html" aria-current="page">Locations</a>
+      <a href="outfits.html">Outfits</a>
+      <a href="avatar.html">Avatar</a>
+    </nav>
+  </main>
+
+  <script>
+    const forecasts = {
+      Istanbul: {
+        today: "Today: 22°C, sunny. Chance of rain: 10%.",
+        tomorrow: "Tomorrow: 18°C, rainy. Chance of rain: 70%.",
+        alert: "Severe weather alert: None."
+      },
+      Ankara: {
+        today: "Today: 16°C, cloudy. Chance of rain: 20%.",
+        tomorrow: "Tomorrow: 12°C, heavy rain. Chance of rain: 80%.",
+        alert: "Severe weather alert: Heavy rain expected tomorrow."
+      }
+    };
+
+    const searchInput = document.getElementById("city-search");
+    const searchMessage = document.getElementById("search-message");
+    const cityButtons = document.querySelectorAll(".city-button");
+
+    function selectCity(city) {
+      const forecast = forecasts[city];
+
+      document.getElementById("forecast-city").textContent =
+        city + " Forecast";
+      document.getElementById("today").textContent = forecast.today;
+      document.getElementById("tomorrow").textContent = forecast.tomorrow;
+      document.getElementById("alert").textContent = forecast.alert;
+
+      searchInput.value = city;
+      searchMessage.classList.add("hidden");
+    }
+
+    function searchCities(event) {
+      event.preventDefault();
+
+      const query = searchInput.value.trim().toLowerCase();
+      let matchFound = false;
+
+      cityButtons.forEach(function (button) {
+        const matches = button.dataset.city.toLowerCase().includes(query);
+        button.hidden = !matches;
+        if (matches) matchFound = true;
+      });
+
+      if (query === "") {
+        cityButtons.forEach(function (button) {
+          button.hidden = false;
+        });
+        searchMessage.classList.add("hidden");
+        return;
+      }
+
+      if (matchFound) {
+        searchMessage.classList.add("hidden");
+
+        const matchingCity = Object.keys(forecasts).find(function (city) {
+          return city.toLowerCase().includes(query);
+        });
+
+        if (matchingCity) selectCity(matchingCity);
+      } else {
+        searchMessage.classList.remove("hidden");
+      }
+    }
+
+    document.getElementById("search-form").addEventListener(
+      "submit",
+      searchCities
+    );
+
+    cityButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        selectCity(button.dataset.city);
+      });
+    });
+  </script>
+</body>
+</html>
+```
