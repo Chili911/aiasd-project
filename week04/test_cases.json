@@ -1,59 +1,140 @@
+
 {
-  "_how_to_fill_this_in": [
-    "One object per test case. A test case is one acceptance criterion from week02/requirements.json, turned into steps that anyone can follow and a result that anyone can check.",
-    "id: TC-NNN-NN. NNN is the number of the requirement it tests, and NN counts the test cases of that requirement: TC-004-01 and TC-004-02 both test REQ-004. As with the REQ ids, a test case id never changes its meaning. A test case you drop keeps its id and gets \"dropped\": true.",
-    "req: the REQ id it tests, exactly as in week02/requirements.json. One requirement per test case.",
-    "title: what is tested, in a few words, such as 'A wrong code is refused'.",
-    "precondition: what must be true before the first step, such as 'A code has been sent to deniz@example.com'. Write 'none' if nothing is needed.",
-    "steps: what the tester does, one action per line, with the real values to type: 'Enter deniz@example.com and tap Send code'. Someone who has never seen your project must be able to follow them.",
-    "expected: what the tester must see at the end, in one full sentence: a screen, a message, a number. Not 'it works', but 'The home screen opens and shows the three free rooms'.",
-    "Every must requirement has at least one test case. For at least three requirements, write a second test case for what happens when something goes wrong: a wrong code, an empty field, a slot that is already taken.",
-    "The three test cases below belong to the two requirements that everyone shares, REQ-001 and REQ-006. Keep them and adjust the wording to your screens. If your phone-screen requirement has another id, change the id and the req of TC-006-01 to match it (REQ-007 gives TC-007-01). Replace the fourth one with your own, and add as many as you need.",
-    "You may delete this block once you have read it; the checker ignores it."
-  ],
-  "project": "the title from PROPOSAL.md §1",
+  "project": "Weather Forecasting and Avatar Styling App",
   "test_cases": [
     {
       "id": "TC-001-01",
       "req": "REQ-001",
-      "title": "Log in with the code from the e-mail",
+      "title": "Log in with the correct code",
       "precondition": "none",
       "steps": [
-        "Open the app",
-        "Enter deniz@example.com and tap Send code",
-        "Enter the 4-digit code from the e-mail and tap Log in"
+        "Open index.html.",
+        "Enter student@example.test on the login screen and submit the form.",
+        "Enter 1234 on the code screen and click Log in."
       ],
-      "expected": "The home screen opens. No screen asks for a password."
+      "expected": "The home.html screen opens, and no screen asks for a password."
     },
     {
       "id": "TC-001-02",
       "req": "REQ-001",
       "title": "A wrong code is refused",
-      "precondition": "A code has been sent to deniz@example.com",
+      "precondition": "The code screen is open.",
       "steps": [
-        "On the code screen, enter 0000 (a code that was not sent) and tap Log in"
+        "Enter 1111 in the verification code field.",
+        "Click Log in."
       ],
-      "expected": "The message 'Wrong code' appears; the user stays on the code screen and can try again."
+      "expected": "The message 'Incorrect code. Please try again.' appears, and the user remains on the code screen."
+    },
+    {
+      "id": "TC-001-03",
+      "req": "REQ-001",
+      "title": "An empty email field is refused",
+      "precondition": "index.html is open.",
+      "steps": [
+        "Leave the email field empty.",
+        "Click the button to submit the email form."
+      ],
+      "expected": "The browser prevents submission and indicates that the required email field must be filled in."
     },
     {
       "id": "TC-006-01",
       "req": "REQ-006",
       "title": "Every screen fits a phone 390 px wide",
-      "precondition": "The browser's phone view is set to 390 px wide, or the app is open on a phone",
+      "precondition": "The browser's phone view is set to 390 px wide.",
       "steps": [
-        "Open every screen of the app, one after the other"
+        "Open index.html.",
+        "Visit code.html, home.html, location.html, outfits.html, and avatar.html using the available links."
       ],
-      "expected": "No screen has a horizontal scroll bar, no text is cut off, and every button can be reached."
+      "expected": "Every screen has no horizontal scrollbar, no cut-off text, and all buttons and controls are reachable."
     },
     {
       "id": "TC-002-01",
       "req": "REQ-002",
-      "title": "…",
-      "precondition": "…",
+      "title": "View today's and tomorrow's Istanbul forecast",
+      "precondition": "The location screen is open.",
       "steps": [
-        "…"
+        "Select Istanbul.",
+        "Open the weather dashboard."
       ],
-      "expected": "…"
+      "expected": "The weather screen shows today's temperature as 22°C and sunny with a 10% chance of rain, and tomorrow's temperature as 18°C and rainy with a 70% chance of rain."
+    },
+    {
+      "id": "TC-002-02",
+      "req": "REQ-002",
+      "title": "No matching location is found",
+      "precondition": "The location selector is open.",
+      "steps": [
+        "Enter Paris in the location search field."
+      ],
+      "expected": "The message 'No matching locations found.' appears, and Paris is not selected as a supported location."
+    },
+    {
+      "id": "TC-003-01",
+      "req": "REQ-003",
+      "title": "Get recommendations for cooler and rainy weather",
+      "precondition": "The outfit suggestions screen is open.",
+      "steps": [
+        "Select Ankara.",
+        "Review today's outfit suggestions.",
+        "Review tomorrow's weather reminder."
+      ],
+      "expected": "The screen recommends clothing suitable for cooler weather and advises bringing an umbrella and wearing water-resistant footwear for tomorrow's heavy rain."
+    },
+    {
+      "id": "TC-004-01",
+      "req": "REQ-004",
+      "title": "Customize the avatar's appearance",
+      "precondition": "The avatar customizer is open.",
+      "steps": [
+        "Select a different hair option.",
+        "Select a makeup option.",
+        "Select a different clothing option."
+      ],
+      "expected": "The avatar preview updates to reflect the selected hair, makeup, and clothing options."
+    },
+    {
+      "id": "TC-005-01",
+      "req": "REQ-005",
+      "title": "Change avatar type and body size",
+      "precondition": "The avatar customizer is open.",
+      "steps": [
+        "Select the male avatar option.",
+        "Select the plus-size body option."
+      ],
+      "expected": "The avatar preview updates to reflect the selected avatar type and body size."
+    },
+    {
+      "id": "TC-007-01",
+      "req": "REQ-007",
+      "title": "Show a severe weather alert",
+      "precondition": "Ankara is selected and the weather dashboard is open.",
+      "steps": [
+        "Review the severe weather alert."
+      ],
+      "expected": "The dashboard displays an alert that heavy rain is expected tomorrow and provides a recommended safety action."
+    },
+    {
+      "id": "TC-008-01",
+      "req": "REQ-008",
+      "title": "Display the forecast and recommendations within three seconds",
+      "precondition": "The prototype is open in the browser.",
+      "steps": [
+        "Open the weather dashboard.",
+        "Measure the time until the forecast and recommendations are visible."
+      ],
+      "expected": "The forecast and recommendations are visible within three seconds."
+    },
+    {
+      "id": "TC-009-01",
+      "req": "REQ-009",
+      "title": "Check readable text and clear controls",
+      "precondition": "The prototype is open at a 390 px viewport width.",
+      "steps": [
+        "Visit each screen.",
+        "Check whether important text is readable.",
+        "Check whether the purpose of each main button and control is clear."
+      ],
+      "expected": "Important text is readable, controls are distinguishable, and the purpose of each main action is clear."
     }
   ]
 }
