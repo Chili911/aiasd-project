@@ -9,8 +9,17 @@
     "You write all of this yourself, by hand, in your own words. No assistant writes, translates or corrects it, not even for the grammar. Your English or Turkish is not graded; a person reads it.",
     "You may delete this block once you have read it; the checker ignores it."
   ],
+
+
   "week": 4,
   "members": [
-    { "student_id": "", "role": "collaborator", "what": "", "accepted": null, "why": "" }
+    {
+      "student_id": "230504566",
+      "role": "collaborator",
+      "what": "The button to view outfit recommendations on the weather dashboard was hard to find because it looked like plain text.",
+      "accepted": true,
+      "why": "I updated the outfit button styling in home.html to match the primary action button class so it stands out clearly."
+    }
   ]
+
 }

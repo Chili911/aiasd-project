@@ -228,4 +228,4 @@ STRONG: Samsung Galaxy Store has no sign-up or annual publishing fee. We will be
 2026-10-03 — §11: removed the paid subscription idea because Wearthly is a student project with no commercial intent.
 2026-10-03 — §12: changed the planned store from Google Play to Samsung Galaxy Store because it has no sign-up or annual publishing fee.
 2026-10-03 — Initial version of the proposal.
-
+2026-10-15 -  Fixed TC-003-01 and updated home.html button styling to improve outfit recommendation link visibility serving REQ-003.
