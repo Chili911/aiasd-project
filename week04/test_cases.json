@@ -1,4 +1,3 @@
-
 {
   "project": "Weather Forecasting and Avatar Styling App",
   "test_cases": [
@@ -37,17 +36,6 @@
       "expected": "The browser prevents submission and indicates that the required email field must be filled in."
     },
     {
-      "id": "TC-006-01",
-      "req": "REQ-006",
-      "title": "Every screen fits a phone 390 px wide",
-      "precondition": "The browser's phone view is set to 390 px wide.",
-      "steps": [
-        "Open index.html.",
-        "Visit code.html, home.html, location.html, outfits.html, and avatar.html using the available links."
-      ],
-      "expected": "Every screen has no horizontal scrollbar, no cut-off text, and all buttons and controls are reachable."
-    },
-    {
       "id": "TC-002-01",
       "req": "REQ-002",
       "title": "View today's and tomorrow's Istanbul forecast",
@@ -81,6 +69,16 @@
       "expected": "The screen recommends clothing suitable for cooler weather and advises bringing an umbrella and wearing water-resistant footwear for tomorrow's heavy rain."
     },
     {
+      "id": "TC-003-02",
+      "req": "REQ-003",
+      "title": "Outfit suggestions error state when weather data is missing",
+      "precondition": "An unsupported location with missing weather data is selected.",
+      "steps": [
+        "Navigate to the outfit suggestions screen."
+      ],
+      "expected": "The screen displays an error message 'Outfit recommendations unavailable for this location' rather than broken text."
+    },
+    {
       "id": "TC-004-01",
       "req": "REQ-004",
       "title": "Customize the avatar's appearance",
@@ -104,6 +102,17 @@
       "expected": "The avatar preview updates to reflect the selected avatar type and body size."
     },
     {
+      "id": "TC-006-01",
+      "req": "REQ-006",
+      "title": "Every screen fits a phone 390 px wide",
+      "precondition": "The browser's phone view is set to 390 px wide.",
+      "steps": [
+        "Open index.html.",
+        "Visit code.html, home.html, location.html, outfits.html, avatar.html, and alert.html using the available links."
+      ],
+      "expected": "Every screen has no horizontal scrollbar, no cut-off text, and all buttons and controls are reachable."
+    },
+    {
       "id": "TC-007-01",
       "req": "REQ-007",
       "title": "Show a severe weather alert",
@@ -112,6 +121,16 @@
         "Review the severe weather alert."
       ],
       "expected": "The dashboard displays an alert that heavy rain is expected tomorrow and provides a recommended safety action."
+    },
+    {
+      "id": "TC-007-02",
+      "req": "REQ-007",
+      "title": "Alert details fail to load",
+      "precondition": "The severe weather alert banner is clicked.",
+      "steps": [
+        "Open alert.html when alert services are unavailable."
+      ],
+      "expected": "The page displays an error message 'Unable to retrieve alert details at this time.'"
     },
     {
       "id": "TC-008-01",
