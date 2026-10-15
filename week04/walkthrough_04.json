@@ -11,10 +11,70 @@
     "Add as many objects as you need. You may delete this block once you have read it; the checker ignores it."
   ],
   "week": 4,
+
   "runs": [
-    { "tc": "", "tester": "", "round": 1, "result": "", "note": "" },
-    { "tc": "", "tester": "", "round": 1, "result": "", "note": "" },
-    { "tc": "", "tester": "", "round": 1, "result": "", "note": "" },
-    { "tc": "", "tester": "", "round": 1, "result": "", "note": "" }
+    {
+      "tc": "TC-001-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "pass",
+      "note": "Entered student@example.test and code 1234, successfully landed on home.html without a password prompt."
+    },
+    {
+      "tc": "TC-006-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "pass",
+      "note": "Navigated through all screens at 390px width and confirmed no horizontal scrollbar or cut-off text appeared."
+    },
+    {
+      "tc": "TC-002-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "pass",
+      "note": "Dashboard displayed Istanbul temperatures for today at 22°C sunny and tomorrow at 18°C rainy."
+    },
+    {
+      "tc": "TC-003-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "fail",
+      "note": "The outfit recommendations link on home.html was misaligned and difficult to click on mobile view."
+    },
+    {
+      "tc": "TC-003-01",
+      "tester": "230504566",
+      "round": 2,
+      "result": "pass",
+      "note": "Re-tested after updating button styling; outfit recommendation link opened outfits.html properly."
+    },
+    {
+      "tc": "TC-004-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "pass",
+      "note": "Selected hair, makeup, and clothing options on avatar customizer screen."
+    },
+    {
+      "tc": "TC-005-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "pass",
+      "note": "Navigated to avatar customizer and confirmed male and plus-size options are selectable."
+    },
+    {
+      "tc": "TC-007-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "pass",
+      "note": "Verified severe weather alert banner for heavy rain warning displays at top of dashboard."
+    },
+    {
+      "tc": "TC-008-01",
+      "tester": "230504566",
+      "round": 1,
+      "result": "blocked",
+      "note": "Response time measurement depends on live backend fetching which will be implemented in Week 5."
+    }
   ]
 }
