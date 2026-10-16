@@ -72,16 +72,15 @@ Delete this comment when you are done.
 
 ## Assistant used and the screen I asked for
 
-I used ChatGPT to generate index.html for login and outfits.html for daily outfit recommendations.
+I used  Gemini to generate index.html for login and outfits.html for daily outfit recommendations.
 
 ## My criteria, written before the prompt
 
 Requirements and test cases selected before writing the prompt:
-- REQ-001: Log in with e-mail address and 4-digit code without password.
-- REQ-003: Provide weather-appropriate outfit recommendations.
-- REQ-006: Page layout fits 390 px mobile screen with no horizontal scrollbar.
-- TC-001-01: Correct login flow with 1234 verification code.
-- TC-003-01: Outfit recommendations for rainy weather.
+- REQ-003: Must display weather-appropriate clothing recommendations based on forecast data (cool and rainy weather).
+- REQ-006: Layout must fit mobile viewports 390 px wide with no horizontal scrollbar.
+- TC-003-01: Get recommendations for cooler and rainy weather.
+- Do not use any JavaScript frameworks, React, or inline fixed pixel widths.
 
 Things I planned to check in the AI response:
 1. Ensure no password input fields or third-party sign-in buttons are added.
