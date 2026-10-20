@@ -33,7 +33,10 @@ Bu tablonun Türkçe açıklaması ASSIGNMENT_05_TR.md §2'dedir.
 Delete this comment when you are done.
 -->
 
+# API contract — Weather Forecasting and Avatar Styling App
+
 | Method | Path | Request | Response | Errors | REQ |
 |---|---|---|---|---|---|
 | GET | /health | — | 200 {"status": "ok"} | — | — |
-| [POST] | [/auth/…] | [what the client sends] | [200 and what comes back] | [status code: when] | REQ-001 |
+| POST | /auth/code | {"email": "khadija.student@example.com"} | 200 {"sent": true} | 422 wrong email format · 429 asked for code too recently | REQ-001 |
+| POST | /auth/login | {"email": "khadija.student@example.com", "code": "1234"} | 200 {"token": "session_12345"} | 401 wrong or expired code · 422 email or code missing | REQ-001 |

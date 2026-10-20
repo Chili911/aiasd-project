@@ -16,10 +16,29 @@ compares the two.
 
 from fastapi import FastAPI
 
-app = FastAPI(title="My project")  # TODO: the name of your project
-
+app = FastAPI(title="Weatherly — Weather Forecasting and Avatar Styling App")
 
 @app.get("/health")
 def health() -> dict:
     """The server is running. A technical endpoint: it serves no requirement."""
     return {"status": "ok"}
+
+from fastapi.responses import JSONResponse
+
+
+@app.post("/auth/code")
+def request_login_code() -> JSONResponse:
+    """REQ-001: Request an email login code. Not implemented in Week 5."""
+    return JSONResponse(
+        status_code=501,
+        content={"detail": "Login code requests are not implemented yet."},
+    )
+
+
+@app.post("/auth/login")
+def login_with_code() -> JSONResponse:
+    """REQ-001: Log in with an email code. Not implemented in Week 5."""
+    return JSONResponse(
+        status_code=501,
+        content={"detail": "Login is not implemented yet."},
+    )
