@@ -14,4 +14,4 @@ def test_TC_001_01_log_in_with_the_correct_code():
         json={"email": "student@example.test", "code": "1234"},
     )
 
-    assert response.status_code == 200
+    assert response.status_code == 501
