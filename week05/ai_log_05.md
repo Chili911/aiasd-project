@@ -1,44 +1,16 @@
 # Week 5 — AI log
 
-> **THE AI LOG IS WRITTEN BY A HUMAN. NO EXCEPTIONS.**
-> **AI LOG KESİNLİKLE İNSAN TARAFINDAN YAZILIR. İSTİSNA YOK.**
->
-> **Write this file yourself, in your own words. Outside the Evidence block and the bold
-> quotes described below, no assistant is used: not to write it, not to "improve" it, not
-> even for the language. A log written by an assistant earns 0.** Your English or Turkish
-> is not graded.
->
-> **Bu dosyayı kendiniz, kendi cümlelerinizle yazın. Evidence bloğunun ve aşağıda anlatılan
-> kalın alıntıların dışında asistan kullanılmaz: ne yazmak için, ne "düzeltmek" için, dil
-> için bile. Asistana yazdırılmış bir günlük 0 puan alır.** İngilizceniz ya da Türkçeniz
-> notlanmaz.
->
-> Two kinds of words, as in Week 4. Yours are plain text: every word, the grammar too. The
-> assistant's are **bold**, and only where they must come from it: a phrase, one sentence or
-> one line of its code that you point at. Each bold phrase also stands, letter for letter,
-> in the Evidence block, under `AI:`. Bold is for nothing else.
->
-> İki tür söz var, 4. haftadaki gibi. Sizin sözleriniz düz yazıdır: her kelime, dil bilgisi de.
-> Asistanın sözleri **kalındır** ve yalnızca asistandan gelmesi gereken yerde: işaret ettiğiniz
-> bir ifade, tek bir cümle ya da kodundan tek bir satır. Her kalın ifade Evidence bloğunda,
-> `AI:` altında, harfi harfine de bulunur. Kalın yazı başka hiçbir şey için kullanılmaz.
->
-> **Worth 2 points, and a person reads it.** It is not graded on how much you used AI, but
-> on whether you ran what the assistant gave you and looked at what really happened. Delete
-> these quoted instructions before you commit.
-
-
 ## The assistant, and the code I asked it for
 
 Gemini; The route in server/main.py and the test in server/tests/test_login.py 
 
 ## What I expected, written before I ran it
 
-I expected everything to run smoothly without any errors.To make sure te test checks weather logging in with the right code gives the correct outcome.  the test id is TC-001-01
+I expected everything to run smoothly without any errors.To make sure te test checks weather logging in with the right code gives the correct outcome.  the test id is TC-001-01, TC-001-02 expetcede 401 but recevied 501 and id TC-001-04 expected  401  and recevied 501. 
 
 ## The command I ran, and what I saw
 
-The command i ran was python -m pytest server/tests/test_login.py -v and sadly the outout showed me that TC-001-01 failed test because test expected status code 200, but the server returned 501  was not  correctly Implemented.
+The command i ran was python -m pytest server/tests/test_login.py -v and sadly the outcome showed me that TC-001-01 failed test because test expected status code 200, but the server returned 501  was not  correctly Implemented. And when i tsted for TC-001-02 it failed the test because the expected status code was 401 but server returned 501 and the same thing for TC-001-04. The reason is that the login functionality has not been implemented yet, so the server is still returning its placeholder response.
 
 ## The line I changed or refused, and why
 
@@ -118,16 +90,64 @@ It does not generate session tokens or handle successful user logins.
 When you implement the actual login logic in Week 6, you will update the test assertion back to 200 OK (along with checking the returned token/response payload) to verify full authentication functionality.
 
 TERMINAL: The command i typed python -m pytest server/tests/test_login.py -v
-the output is : cachedir: .pytest_cache
+the output is :  
+PS C:\Users\USER\Documents\aiasd-project> python -m pytest server/tests/test_login.py -v
+===================================================================== test session starts =====================================================================
+platform win32 -- Python 3.13.1, pytest-9.1.1, pluggy-1.7.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
 rootdir: C:\Users\USER\Documents\aiasd-project
 plugins: anyio-4.15.1
-collected 1 item                                                                           
+collected 3 items
 
-server/tests/test_login.py::test_TC_001_01_log_in_with_the_correct_code PASSED       [100%]
+server/tests/test_login.py::test_TC_001_01_log_in_with_the_correct_code FAILED                                                                           [ 33%]
+server/tests/test_login.py::test_TC_001_02_a_wrong_code_is_refused FAILED                                                                                [ 66%]
+server/tests/test_login.py::test_TC_001_04_an_expired_login_code_is_refused FAILED                                                                       [100%]
 
-==================================== 1 passed in 0.71s ====================================
-(.venv) PS C:\Users\USER\Documents\aiasd-project> 
+========================================================================== FAILURES ===========================================================================
+_________________________________________________________ test_TC_001_01_log_in_with_the_correct_code _________________________________________________________
 
+    def test_TC_001_01_log_in_with_the_correct_code():
+        response = client.post(
+            "/auth/login",
+            json={"email": "student@example.test", "code": "1234"},
+        )
 
+>       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = <Response [501 Not Implemented]>.status_code
+
+server\tests\test_login.py:17: AssertionError
+___________________________________________________________ test_TC_001_02_a_wrong_code_is_refused ____________________________________________________________
+
+    def test_TC_001_02_a_wrong_code_is_refused():
+        response = client.post(
+            "/auth/login",
+            json={"email": "student@example.test", "code": "1111"},
+        )
+
+>       assert response.status_code == 401
+E       assert 501 == 401
+E        +  where 501 = <Response [501 Not Implemented]>.status_code
+
+server\tests\test_login.py:26: AssertionError
+_______________________________________________________ test_TC_001_04_an_expired_login_code_is_refused _______________________________________________________
+
+    def test_TC_001_04_an_expired_login_code_is_refused():
+        response = client.post(
+            "/auth/login",
+            json={"email": "student@example.test", "code": "1234"},
+        )
+
+>       assert response.status_code == 401
+E       assert 501 == 401
+E        +  where 501 = <Response [501 Not Implemented]>.status_code
+
+server\tests\test_login.py:35: AssertionError
+=================================================================== short test summary info ===================================================================
+FAILED server/tests/test_login.py::test_TC_001_01_log_in_with_the_correct_code - assert 501 == 200
+FAILED server/tests/test_login.py::test_TC_001_02_a_wrong_code_is_refused - assert 501 == 401
+FAILED server/tests/test_login.py::test_TC_001_04_an_expired_login_code_is_refused - assert 501 == 401
+====================================================================== 3 failed in 0.85s ======================================================================
+PS C:\Users\USER\Documents\aiasd-project>
 
 ```
