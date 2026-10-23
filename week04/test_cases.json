@@ -155,5 +155,19 @@
       ],
       "expected": "Important text is readable, controls are distinguishable, and the purpose of each main action is clear."
     }
+
+    ,{
+      "id": "TC-001-04",
+      "req": "REQ-001",
+      "title": "An expired login code is refused",
+      "precondition": "A login code was issued more than 10 minutes ago.",
+      "steps": [
+        "Enter the email address associated with the code.",
+        "Enter the expired login code.",
+        "Click Log in."
+      ],
+      "expected": "The expired code is refused with a message, and the user is not logged in."
+    }
+
   ]
 }
