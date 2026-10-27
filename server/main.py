@@ -14,6 +14,8 @@ and the same path, and every row of week05/api.md is an endpoint here. The check
 compares the two.
 """
 
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI
 from server import course_login
 
@@ -41,3 +43,12 @@ def get_weather(city: str = "") -> dict:
         "temperature": 18,
         "condition": "Cloudy",
     }
+
+app.mount(
+    "/",
+    StaticFiles(
+        directory=Path(__file__).resolve().parent.parent / "web",
+        html=True,
+    ),
+    name="web",
+)
