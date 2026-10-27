@@ -1,0 +1,47 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherly</title>
+</head>
+<body>
+  <h1>Weatherly ☁️</h1>
+  <p>Plan your day with the weather in mind.</p>
+
+  <h2>Check a city</h2>
+  <input id="city" placeholder="Enter a city, e.g. Istanbul">
+  <button onclick="getWeather()">Check weather</button>
+  <p id="result">Enter a city to check its forecast.</p>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById("city").value.trim();
+      const result = document.getElementById("result");
+
+      if (!city) {
+        result.textContent = "Please enter a city.";
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          "/api/weather?city=" + encodeURIComponent(city)
+        );
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error("Could not load weather");
+        }
+
+        result.textContent =
+          `${data.city}: ${data.temperature}°C, ${data.condition}`;
+      } catch {
+        result.textContent = "Could not load the forecast.";
+      }
+    }
+  </script>
+</body>
+</html>
+```
