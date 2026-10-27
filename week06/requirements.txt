@@ -2,6 +2,6 @@
 #
 #   pip install -r week06/requirements.txt
 
--r week03.txt
+# -r week03.txt
 
 faiss-cpu==1.9.0

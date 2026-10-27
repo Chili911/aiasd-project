@@ -6,13 +6,16 @@
     "test_email_domain is the domain of the addresses the course tests use: it must pass email_must_end_with.",
     "Replace every value in [square brackets]. The course tests in course_tests/ read this file."
   ],
-  "request_code": "[POST /path of the endpoint that sends the code]",
-  "login": "[POST /path of the endpoint that logs in with the code]",
-  "me": "[GET /path of the endpoint that answers with the logged-in user]",
-  "email_field": "[the name of the e-mail field, such as email]",
-  "code_field": "[the name of the code field, such as code]",
-  "token_field": "[the name of the token field in the login answer, such as token]",
+
+  "request_code": "POST /auth/code",
+  "login": "POST /auth/login",
+  "me": "GET /auth/me",
+  "email_field": "email",
+  "code_field": "code",
+  "token_field": "token",
   "test_email_domain": "example.com",
   "email_must_end_with": "",
-  "app_name": "[the name of your app, as the e-mail with the code shows it]"
+  "app_name": "Weatherly"
+
 }
+
