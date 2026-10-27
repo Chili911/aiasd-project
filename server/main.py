@@ -26,12 +26,16 @@ app.include_router(course_login.router)
 def health() -> dict:
     """The server is running. A technical endpoint: it serves no requirement."""
     return {"status": "ok"}
+
+
+
+
 from fastapi import HTTPException
 
 
 @app.get("/api/weather")
 def get_weather(city: str = "") -> dict:
-    """REQ-002: Return a simple forecast for a city."""
+    """REQ-002: Return today's and tomorrow's forecast for a city."""
     if not city.strip():
         raise HTTPException(
             status_code=422,
@@ -40,9 +44,19 @@ def get_weather(city: str = "") -> dict:
 
     return {
         "city": city.strip(),
-        "temperature": 18,
-        "condition": "Cloudy",
+        "today": {
+            "temperature": 18,
+            "condition": "Cloudy",
+            "precipitation": "20%",
+        },
+        "tomorrow": {
+            "temperature": 20,
+            "condition": "Rainy",
+            "precipitation": "70%",
+        },
     }
+
+
 
 app.mount(
     "/",
