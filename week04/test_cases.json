@@ -4,6 +4,7 @@
     {
       "id": "TC-001-01",
       "req": "REQ-001",
+      "run": "server",
       "title": "Log in with the correct code",
       "precondition": "none",
       "steps": [
@@ -16,6 +17,7 @@
     {
       "id": "TC-001-02",
       "req": "REQ-001",
+      "run": "server",
       "title": "A wrong code is refused",
       "precondition": "The code screen is open.",
       "steps": [
@@ -27,6 +29,7 @@
     {
       "id": "TC-001-03",
       "req": "REQ-001",
+      "run": "server",
       "title": "An empty email field is refused",
       "precondition": "index.html is open.",
       "steps": [
@@ -38,6 +41,7 @@
     {
       "id": "TC-002-01",
       "req": "REQ-002",
+      "run": "server",
       "title": "View today's and tomorrow's Istanbul forecast",
       "precondition": "The location screen is open.",
       "steps": [
