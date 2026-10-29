@@ -1,4 +1,4 @@
-```yaml
+
 name: deliverables
 
 on:
@@ -44,4 +44,3 @@ jobs:
 
       - name: ruff format --check
         run: python -m ruff format --check .
-```
