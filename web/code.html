@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherly Login</title>
+</head>
+<body>
+  <h1>Weatherly</h1>
+  <h2>Sign in with your email</h2>
+
+  <!-- serves: REQ-001 -->
+
+  <form id="emailForm">
+    <label for="email">Email address</label>
+    <input id="email" type="email" required placeholder="you@example.com">
+    <button type="submit">Send login code</button>
+  </form>
+
+  <p id="message"></p>
+
+  <section id="codeSection" hidden>
+    <form id="codeForm">
+      <label for="code">Four-digit login code</label>
+      <input id="code" type="text" inputmode="numeric"
+             pattern="[0-9]{4}" maxlength="4" required>
+      <button type="submit">Sign in</button>
+    </form>
+  </section>
+
+  <script>
+    const emailForm = document.getElementById("emailForm");
+    const codeForm = document.getElementById("codeForm");
+    const message = document.getElementById("message");
+    const codeSection = document.getElementById("codeSection");
+
+    let email = "";
+
+    emailForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      email = document.getElementById("email").value.trim();
+      message.textContent = "Sending login code...";
+
+      try {
+        const response = await fetch("/auth/code", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Could not send the code.");
+        }
+
+        message.textContent = "Check your email for the login code.";
+        codeSection.hidden = false;
+      } catch (error) {
+        message.textContent = error.message || "Could not send the code.";
+      }
+    });
+
+    codeForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const code = document.getElementById("code").value.trim();
+      message.textContent = "Signing in...";
+
+      try {
+        const response = await fetch("/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, code })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Incorrect or expired code.");
+        }
+
+        sessionStorage.setItem("weatherly_token", data.token);
+        window.location.href = "/index.html";
+      } catch (error) {
+        message.textContent = error.message || "Sign-in failed.";
+      }
+    });
+  </script>
+</body>
+</html>

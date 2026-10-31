@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherly - Outfit Recommendations</title>
+</head>
+<body>
+  <h1>Weatherly</h1>
+  <h2>Outfit Recommendations</h2>
+
+  <!-- serves: REQ-003 -->
+
+  <form id="outfitForm">
+    <label for="city">Enter a city</label>
+    <input id="city" type="text" required placeholder="Ankara">
+    <button type="submit">Get Recommendations</button>
+  </form>
+
+  <p id="message"></p>
+  <div id="results"></div>
+
+  <script>
+    const form = document.getElementById("outfitForm");
+    const message = document.getElementById("message");
+    const results = document.getElementById("results");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const city = document.getElementById("city").value.trim();
+      message.textContent = "Loading recommendations...";
+      results.replaceChildren();
+
+      try {
+        const response = await fetch(
+          "/api/outfits?city=" + encodeURIComponent(city)
+        );
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Recommendations are unavailable.");
+        }
+
+        message.textContent = "Recommendations for " + city + ":";
+
+        for (const item of data.today || []) {
+          const p = document.createElement("p");
+          p.textContent = "Today: " + item;
+          results.appendChild(p);
+        }
+
+        for (const item of data.tomorrow || []) {
+          const p = document.createElement("p");
+          p.textContent = "Tomorrow: " + item;
+          results.appendChild(p);
+        }
+      } catch (error) {
+        message.textContent =
+          error.message || "Could not load recommendations.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 """
 server/main.py: the server of your project (FastAPI).
 AIASD - Atlas University - Fall 2026-27 - Week 5
@@ -33,15 +34,23 @@ def health() -> dict:
 
 @app.get("/api/weather")
 def get_weather(city: str = "") -> dict:
-    """REQ-002: Return today's and tomorrow's forecast for a city."""
-    if not city.strip():
+    """REQ-002: Return today's and tomorrow's forecast for a supported city."""
+    city = city.strip()
+
+    if not city:
         raise HTTPException(
             status_code=422,
             detail="City is required",
         )
 
+    if city.lower() != "istanbul":
+        raise HTTPException(
+            status_code=404,
+            detail="No matching locations found.",
+        )
+
     return {
-        "city": city.strip(),
+        "city": city,
         "today": {
             "temperature": 18,
             "condition": "Cloudy",
@@ -52,6 +61,51 @@ def get_weather(city: str = "") -> dict:
             "condition": "Rainy",
             "precipitation": "70%",
         },
+    }
+
+
+@app.get("/api/outfits")
+def get_outfits(city: str = "") -> dict:
+    """REQ-003: Recommend clothing based on the forecast."""
+    city = city.strip()
+
+    if city.lower() == "ankara":
+        return {
+            "city": "Ankara",
+            "today": ["Jacket", "Hoodie"],
+            "tomorrow": ["Umbrella", "Water-resistant footwear"],
+        }
+
+    raise HTTPException(
+        status_code=404,
+        detail="Outfit recommendations unavailable for this location",
+    )
+
+
+@app.get("/api/avatar")
+def get_avatar(
+    hair: str = "long",
+    makeup: str = "natural",
+    clothing: str = "casual",
+) -> dict:
+    """REQ-004: Return the selected avatar appearance options."""
+    allowed_hair = ["long", "short", "curly"]
+    allowed_makeup = ["natural", "soft", "bold"]
+    allowed_clothing = ["casual", "formal", "sporty"]
+
+    if hair not in allowed_hair:
+        raise HTTPException(status_code=422, detail="Invalid hair option")
+
+    if makeup not in allowed_makeup:
+        raise HTTPException(status_code=422, detail="Invalid makeup option")
+
+    if clothing not in allowed_clothing:
+        raise HTTPException(status_code=422, detail="Invalid clothing option")
+
+    return {
+        "hair": hair,
+        "makeup": makeup,
+        "clothing": clothing,
     }
 
 

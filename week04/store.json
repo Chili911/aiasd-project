@@ -19,6 +19,15 @@
     "developer_name": "Weatherly Studio",
     "status": "applied",
     "evidence": "store_s1.png"
-  }
+  },
+
+
+
+"S2": {
+  "date": "2026-10-29",
+  "app_name": "Weatherly",
+  "package": "com.weatherly.app",
+  "evidence": "store_s2.png"
+}
 
 }

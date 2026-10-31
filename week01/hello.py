@@ -13,7 +13,6 @@ Run with:
     python week01/hello.py
 """
 
-
 import sys
 
 
@@ -34,7 +33,6 @@ def main() -> None:
     for i in range(len(players)):
         print(f"{players[i]} - Rating: {ratings[i]}/100")
 
+
 if __name__ == "__main__":
     main()
-
-    

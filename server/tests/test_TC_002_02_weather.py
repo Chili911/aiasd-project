@@ -1,3 +1,4 @@
+
 from fastapi.testclient import TestClient
 
 from server.main import app
@@ -5,7 +6,7 @@ from server.main import app
 client = TestClient(app)
 
 
-def test_TC_002_02_weather_forecast():
+def test_TC_002_01_weather_forecast():
     response = client.get("/api/weather?city=Istanbul")
 
     assert response.status_code == 200
@@ -22,7 +23,14 @@ def test_TC_002_02_weather_forecast():
     assert data["tomorrow"]["precipitation"] == "70%"
 
 
-def test_TC_002_02_weather_requires_city():
+def test_TC_002_02_unsupported_city():
+    response = client.get("/api/weather?city=Paris")
+
+    assert response.status_code == 404
+    assert response.json()["detail"] == "No matching locations found."
+
+
+def test_TC_002_01_weather_requires_city():
     response = client.get("/api/weather")
 
     assert response.status_code == 422

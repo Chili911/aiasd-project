@@ -75,3 +75,11 @@ def test_TC_001_04_an_expired_login_code_is_refused():
     )
 
     assert response.status_code == 401
+
+def test_TC_001_03_an_empty_email_is_refused():
+    response = client.post(
+        "/auth/code",
+        json={"email": ""},
+    )
+
+    assert response.status_code == 422

@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +7,10 @@
   <title>Weatherly</title>
 </head>
 <body>
-  <h1>Weatherly ☁️</h1>
+  <h1>Weatherly</h1>
   <p>Plan your day with the weather in mind.</p>
 
+  <!-- serves: REQ-002 -->
   <h2>Check a city</h2>
   <input id="city" placeholder="Enter a city, e.g. Istanbul">
   <button onclick="getWeather()">Check weather</button>
@@ -31,12 +32,20 @@
         );
         const data = await response.json();
 
+        if (response.status === 404) {
+          result.textContent = "No matching locations found.";
+          return;
+        }
+
         if (!response.ok) {
           throw new Error("Could not load weather");
         }
 
         result.textContent =
-          `${data.city}: ${data.temperature}°C, ${data.condition}`;
+          `${data.city} — Today: ${data.today.temperature}°C, ` +
+          `${data.today.condition}, rain ${data.today.precipitation}. ` +
+          `Tomorrow: ${data.tomorrow.temperature}°C, ` +
+          `${data.tomorrow.condition}, rain ${data.tomorrow.precipitation}.`;
       } catch {
         result.textContent = "Could not load the forecast.";
       }
@@ -44,4 +53,3 @@
   </script>
 </body>
 </html>
-```

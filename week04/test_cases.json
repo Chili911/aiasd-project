@@ -1,3 +1,4 @@
+
 {
   "project": "Weather Forecasting and Avatar Styling App",
   "test_cases": [
@@ -53,6 +54,7 @@
     {
       "id": "TC-002-02",
       "req": "REQ-002",
+      "run": "server",
       "title": "No matching location is found",
       "precondition": "The location selector is open.",
       "steps": [
@@ -63,6 +65,7 @@
     {
       "id": "TC-003-01",
       "req": "REQ-003",
+      "run": "server",
       "title": "Get recommendations for cooler and rainy weather",
       "precondition": "The outfit suggestions screen is open.",
       "steps": [
@@ -75,6 +78,7 @@
     {
       "id": "TC-003-02",
       "req": "REQ-003",
+      "run": "server",
       "title": "Outfit suggestions error state when weather data is missing",
       "precondition": "An unsupported location with missing weather data is selected.",
       "steps": [
@@ -85,6 +89,7 @@
     {
       "id": "TC-004-01",
       "req": "REQ-004",
+      "run": "server",
       "title": "Customize the avatar's appearance",
       "precondition": "The avatar customizer is open.",
       "steps": [
@@ -97,6 +102,7 @@
     {
       "id": "TC-005-01",
       "req": "REQ-005",
+      "run": "web",
       "title": "Change avatar type and body size",
       "precondition": "The avatar customizer is open.",
       "steps": [
@@ -108,6 +114,7 @@
     {
       "id": "TC-006-01",
       "req": "REQ-006",
+      "run": "web",
       "title": "Every screen fits a phone 390 px wide",
       "precondition": "The browser's phone view is set to 390 px wide.",
       "steps": [
@@ -119,6 +126,7 @@
     {
       "id": "TC-007-01",
       "req": "REQ-007",
+      "run": "web",
       "title": "Show a severe weather alert",
       "precondition": "Ankara is selected and the weather dashboard is open.",
       "steps": [
@@ -129,6 +137,7 @@
     {
       "id": "TC-007-02",
       "req": "REQ-007",
+      "run": "manual",
       "title": "Alert details fail to load",
       "precondition": "The severe weather alert banner is clicked.",
       "steps": [
@@ -139,6 +148,7 @@
     {
       "id": "TC-008-01",
       "req": "REQ-008",
+      "run": "web",
       "title": "Display the forecast and recommendations within three seconds",
       "precondition": "The prototype is open in the browser.",
       "steps": [
@@ -150,6 +160,7 @@
     {
       "id": "TC-009-01",
       "req": "REQ-009",
+      "run": "web",
       "title": "Check readable text and clear controls",
       "precondition": "The prototype is open at a 390 px viewport width.",
       "steps": [
@@ -158,11 +169,11 @@
         "Check whether the purpose of each main button and control is clear."
       ],
       "expected": "Important text is readable, controls are distinguishable, and the purpose of each main action is clear."
-    }
-
-    ,{
+    },
+    {
       "id": "TC-001-04",
       "req": "REQ-001",
+      "run": "server",
       "title": "An expired login code is refused",
       "precondition": "A login code was issued more than 10 minutes ago.",
       "steps": [
@@ -172,6 +183,5 @@
       ],
       "expected": "The expired code is refused with a message, and the user is not logged in."
     }
-
   ]
 }
