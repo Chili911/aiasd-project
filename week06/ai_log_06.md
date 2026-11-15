@@ -56,40 +56,83 @@ Delete this comment when you are done.
 
 ## The assistant, and what I gave it
 
-[Which assistant; which files or rules you gave it; one or two sentences.]
+I used Chatgpt; I provided the server/main.py file. I asked for attacks against my own Weatherly feature routes ; I tested the suggested attacks using PowerShell and curl.exe
 
 ## The three attacks, and what my server did
 
-1. [The first attack, and what your server did: the status code.]
-2. [The second attack, and what your server did.]
-3. [The third attack, and what your server did.]
+
+1. Avatar without login:
+   The request returned 200 OK and the default avatar. This shows that the avatar endpoint does not currently require authentication.
+
+2. Empty city:
+   The request returned 404 Not Found. The server rejected the whitespace-only city.
+
+3. Invalid makeup:
+   The request returned 422 Unprocessable Content. The server rejected the invalid makeup value.
+
 
 ## The one I fixed
 
-[What you changed, and the test, with its test case id, that now catches it.]
+I did not fix any of the three attacks during Week 6. I tested them against my server, but I did not make any changes to server/main.py. Therefore, I do not have a new test case that checks a fix.
+
+
 
 ## The one that is wrong
 
-[Why it does not work against your server, and the evidence: a status code or a test result.]
+Attack 2 , The attempted input was a city containing only spaces. The server removed the spaces using .strip().
+It returned 404 instead of providing outfit recommendations. The evidence is in week6_terminal_evidence.txt 
+
+
+
 
 ## The assistant and my groupmate
 
-[Where do they agree, and which of the two found something the other missed?]
+
+My groupmate and I both tested whether an incorrect login code would be rejected. Both attacks were related to login security. My three attacks also checked avatar access without login, an empty city input, and invalid makeup. These tests covered different parts of the application. My avatar attack found that the endpoint returned 200 OK without requiring a login, which was something my groupmate's attack did not check.
+
+
+
 
 ## Evidence — the exchange and the terminal output
 
 ```text
 ME:
-[prompt]
+I want you to attack my own feature routes in server/main.py with the three strongest attacks. Do not fix anything. Check for possible problems in the avatar, weather and outfits routes.
 
 AI:
-[answer]
+1. Access the avatar endpoint without logging in:
+curl.exe -i http://127.0.0.1:8000/api/avatar
+
+2. Send a city containing only spaces to the outfits endpoint:
+curl.exe -i "http://127.0.0.1:8000/api/outfits?city=%20%20%20"
+
+3. Send an invalid makeup option to the avatar endpoint:
+curl.exe -i "http://127.0.0.1:8000/api/avatar?makeup=invalid"
 
 TERMINAL:
-[output]
-<!-- ME: your prompt. AI: the assistant's answer. TERMINAL: the commands you typed and their
-     output. Paste the rounds of the exchange that show the error; you may leave out whole
-     rounds that do not. Every ME:, AI: or TERMINAL: part you keep is pasted whole, exactly as
-     it came: nothing removed, nothing corrected, not even the grammar. Several rounds: repeat
-     ME: and AI:. -->
+
+PS C:\Users\USER\Documents\aiasd-project> curl.exe -i http://127.0.0.1:8000/api/avatar
+HTTP/1.1 200 OK
+date: Sun, 15 Nov 2026 11:42:15 GMT
+server: uvicorn
+content-length: 54
+content-type: application/json
+
+{"hair":"long","makeup":"natural","clothing":"casual"}
+PS C:\Users\USER\Documents\aiasd-project> curl.exe -i "http://127.0.0.1:8000/api/outfits?city=%20%20%20"
+HTTP/1.1 404 Not Found
+date: Sun, 15 Nov 2026 11:42:24 GMT
+server: uvicorn
+content-length: 65
+content-type: application/json
+
+{"detail":"Outfit recommendations unavailable for this location"}
+PS C:\Users\USER\Documents\aiasd-project> curl.exe -i "http://127.0.0.1:8000/api/avatar?makeup=invalid"
+HTTP/1.1 422 Unprocessable Content
+date: Sun, 15 Nov 2026 11:42:34 GMT
+server: uvicorn
+content-length: 34
+content-type: application/json
+
+{"detail":"Invalid makeup option"}
 ```
