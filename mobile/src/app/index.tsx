@@ -10,6 +10,8 @@ import {
   ActivityIndicator,
   ScrollView,
 } from 'react-native';
+import { router } from 'expo-router';
+import { setAuthToken } from '../constants/auth';
 
 const API_URL = 'http://192.168.1.8:8000';
 
@@ -45,6 +47,7 @@ export default function HomeScreen() {
     }
 
     setLoading(true);
+
     try {
       const response = await fetch(`${API_URL}/auth/code`, {
         method: 'POST',
@@ -67,11 +70,15 @@ export default function HomeScreen() {
 
   async function login() {
     setLoading(true);
+
     try {
       const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), code: code.trim() }),
+        body: JSON.stringify({
+          email: email.trim(),
+          code: code.trim(),
+        }),
       });
 
       if (!response.ok) {
@@ -79,6 +86,9 @@ export default function HomeScreen() {
       }
 
       const data = await response.json();
+
+      // Save the login token for the chatbot.
+      setAuthToken(data.token);
 
       const userResponse = await fetch(`${API_URL}/auth/me`, {
         headers: { Authorization: `Bearer ${data.token}` },
@@ -100,10 +110,14 @@ export default function HomeScreen() {
       }
 
       const weatherData = await weatherResponse.json();
+
       setWeather(weatherData);
       setStep('dashboard');
     } catch (error) {
-      Alert.alert('Login failed', 'Please check your code and try again.');
+      Alert.alert(
+        'Login failed',
+        'Please check your code and try again.'
+      );
     } finally {
       setLoading(false);
     }
@@ -117,7 +131,10 @@ export default function HomeScreen() {
       {step === 'email' && (
         <>
           <Text style={styles.heading}>Welcome!</Text>
-          <Text style={styles.description}>Enter your email to get started.</Text>
+          <Text style={styles.description}>
+            Enter your email to get started.
+          </Text>
+
           <TextInput
             style={styles.input}
             placeholder="Email address"
@@ -126,8 +143,17 @@ export default function HomeScreen() {
             value={email}
             onChangeText={setEmail}
           />
-          <Pressable style={styles.button} onPress={requestCode} disabled={loading}>
-            {loading ? <ActivityIndicator color="white" /> : <Text style={styles.buttonText}>Send code</Text>}
+
+          <Pressable
+            style={styles.button}
+            onPress={requestCode}
+            disabled={loading}
+          >
+            {loading ? (
+              <ActivityIndicator color="white" />
+            ) : (
+              <Text style={styles.buttonText}>Send code</Text>
+            )}
           </Pressable>
         </>
       )}
@@ -135,7 +161,10 @@ export default function HomeScreen() {
       {step === 'code' && (
         <>
           <Text style={styles.heading}>Verify your email</Text>
-          <Text style={styles.description}>Enter the 4-digit code sent to {email}.</Text>
+          <Text style={styles.description}>
+            Enter the 4-digit code sent to {email}.
+          </Text>
+
           <TextInput
             style={styles.input}
             placeholder="4-digit code"
@@ -144,8 +173,17 @@ export default function HomeScreen() {
             value={code}
             onChangeText={setCode}
           />
-          <Pressable style={styles.button} onPress={login} disabled={loading}>
-            {loading ? <ActivityIndicator color="white" /> : <Text style={styles.buttonText}>Verify and login</Text>}
+
+          <Pressable
+            style={styles.button}
+            onPress={login}
+            disabled={loading}
+          >
+            {loading ? (
+              <ActivityIndicator color="white" />
+            ) : (
+              <Text style={styles.buttonText}>Verify and login</Text>
+            )}
           </Pressable>
         </>
       )}
@@ -158,8 +196,12 @@ export default function HomeScreen() {
 
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Today's Weather ☀️</Text>
-            <Text style={styles.temperature}>{weather.today.temperature}°C</Text>
-            <Text style={styles.weatherText}>{weather.today.condition}</Text>
+            <Text style={styles.temperature}>
+              {weather.today.temperature}°C
+            </Text>
+            <Text style={styles.weatherText}>
+              {weather.today.condition}
+            </Text>
             <Text style={styles.weatherText}>
               Precipitation: {weather.today.precipitation}
             </Text>
@@ -167,22 +209,38 @@ export default function HomeScreen() {
 
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Tomorrow's Weather 🌧️</Text>
-            <Text style={styles.temperature}>{weather.tomorrow.temperature}°C</Text>
-            <Text style={styles.weatherText}>{weather.tomorrow.condition}</Text>
+            <Text style={styles.temperature}>
+              {weather.tomorrow.temperature}°C
+            </Text>
+            <Text style={styles.weatherText}>
+              {weather.tomorrow.condition}
+            </Text>
             <Text style={styles.weatherText}>
               Precipitation: {weather.tomorrow.precipitation}
             </Text>
           </View>
 
+          {/* Open chatbot */}
+          <Pressable
+            style={styles.button}
+            onPress={() => router.push('/chat')}
+          >
+            <Text style={styles.buttonText}>
+              Open Weatherly Chat 💬
+            </Text>
+          </Pressable>
+
           <Pressable
             style={styles.button}
             onPress={() => {
+              setAuthToken('');
               setStep('email');
               setEmail('');
               setCode('');
               setLoggedInEmail('');
               setWeather(null);
-            }}>
+            }}
+          >
             <Text style={styles.buttonText}>Log out</Text>
           </Pressable>
         </>
