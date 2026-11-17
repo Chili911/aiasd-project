@@ -15,13 +15,26 @@ and the same path, and every row of week05/api.md is an endpoint here. The check
 compares the two.
 """
 
+import asyncio
+from google import genai
+import sqlite3
+from datetime import date
+from pydantic import BaseModel, Field
+import json
+import os
+import urllib.error
+import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
+from threading import Lock
 
-from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from server import course_login
+from server.course_login import current_user
 
 app = FastAPI(title="Weatherly - Weather Forecasting and Avatar Styling App")
 
@@ -120,6 +133,118 @@ def get_avatar(
         "makeup": makeup,
         "clothing": clothing,
     }
+
+
+# Load the Gemini API key from server/.env
+load_dotenv(Path(__file__).resolve().parent / ".env")
+
+# Store daily message counts in SQLite
+CHAT_DB = Path(__file__).resolve().parent / "chat_usage.db"
+
+
+class ChatRequest(BaseModel):
+    message: str = Field(min_length=1, max_length=2000)
+
+
+def use_daily_message(user_email: str) -> bool:
+    """Allow a maximum of 20 chatbot messages per user per day."""
+
+    today = date.today().isoformat()
+
+    with sqlite3.connect(CHAT_DB) as connection:
+        connection.execute("""
+            CREATE TABLE IF NOT EXISTS chat_usage (
+                user_email TEXT NOT NULL,
+                usage_date TEXT NOT NULL,
+                message_count INTEGER NOT NULL DEFAULT 0,
+                PRIMARY KEY (user_email, usage_date)
+            )
+        """)
+
+        connection.execute("BEGIN IMMEDIATE")
+
+        result = connection.execute(
+            """
+            SELECT message_count
+            FROM chat_usage
+            WHERE user_email = ? AND usage_date = ?
+            """,
+            (user_email, today)
+        ).fetchone()
+
+        if result and result[0] >= 20:
+            return False
+
+        connection.execute(
+            """
+            INSERT INTO chat_usage (user_email, usage_date, message_count)
+            VALUES (?, ?, 1)
+            ON CONFLICT(user_email, usage_date)
+            DO UPDATE SET message_count = message_count + 1
+            """,
+            (user_email, today)
+        )
+
+    return True
+
+
+@app.post("/chat")
+async def chat(
+    request: ChatRequest,
+    user_email: str = Depends(current_user)
+):
+    """Answer a logged-in user's weather and outfit questions."""
+
+    api_key = os.getenv("LLM_API_KEY")
+
+    if not api_key:
+        raise HTTPException(
+            status_code=503,
+            detail="AI service is not configured."
+        )
+
+    if not use_daily_message(user_email):
+        raise HTTPException(
+            status_code=429,
+            detail="Daily chatbot message limit reached."
+        )
+
+    try:
+        client = genai.Client(api_key=api_key)
+
+        prompt = f"""
+        You are the Weatherly chatbot.
+        Help the user with weather-related questions and simple outfit
+        recommendations.
+
+        Give clear, short and helpful answers.
+        Do not invent live weather information or claim to know the
+        user's personal data unless it is provided in the conversation.
+
+        User question: {request.message}
+        """
+
+        response = await asyncio.wait_for(
+            asyncio.to_thread(
+                client.models.generate_content,
+                model="gemini-2.5-flash",
+                contents=prompt
+            ),
+            timeout=20
+        )
+
+        if not response.text:
+            raise RuntimeError("Gemini returned an empty response.")
+
+        return {"answer": response.text}
+
+    except Exception as error:
+        print(f"Gemini chat error: {error}")
+        raise HTTPException(
+            status_code=503,
+            detail="AI service is temporarily unavailable."
+        )
+
 
 
 app.mount(
