@@ -13,7 +13,7 @@
   ],
   "week": 7,
   "runs": [
-    { "tc": "", "tester": "", "device": "", "round": 1, "result": "", "note": "" },
+    { "tc": "", "tester": "230504522", "device": "Huawei Y6 Prime 2019, Android 9", "round": 1, "result": "", "note": "" },
     { "tc": "", "tester": "", "device": "", "round": 1, "result": "", "note": "" },
     { "tc": "", "tester": "", "device": "", "round": 1, "result": "", "note": "" }
   ]

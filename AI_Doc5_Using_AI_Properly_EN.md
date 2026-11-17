@@ -88,7 +88,7 @@ catches the error.
 | The three tiers and the chatbot (8) | It writes each tier (server, web, mobile) correctly on its own, and the server code that calls the chatbot's LLM API. | It does not make the three tiers agree with each other: the same field is `room_id` on the server and `roomId` in the app; the server returns a status code that no client handles. It may put the API key in the app instead of in the server's `.env`. | §7, §9 |
 | Testing with people (9–10) | It writes test plans, bug-report templates and a list of likely failures. | It cannot know what your testers will actually do, because it has never met them. | §8 |
 | Store and release (11) | It writes checklists and the text of the store listing. | It quotes store rules as they were a year ago, and the review time for an established account, not for a new one. | §3, §5 |
-| Closure and defence (12–14) | It writes summaries and the first draft of the poster. | It cannot say why you decided what you decided; only you know this, and you will be asked. | §9 |
+| Closure and defence (12–13; EN section 12–14) | It writes summaries and the first draft of the poster. | It cannot say why you decided what you decided; only you know this, and you will be asked. | §9 |
 
 Read the table from top to bottom. The assistant is most useful where the work is generic.
 It is least useful where the work is about *your* product and *your* people. This course
@@ -281,6 +281,11 @@ refused.
 
 - **In the lecture:** commit each piece of work in the middle, commit it again when it works,
   and push every commit right away.
+- **First push before 09:30** (from Week 7): run the checker at the start of the lecture,
+  then commit and push. If your first push arrives after 09:30 (coming late included), I check
+  by hand which computer your lecture work was made on.
+- **Commit and push when I call it** (from Week 7): at any moment in the lecture I may ask
+  everyone to commit and push at once; your push should reach GitHub within 5 minutes.
 - **Outside the lecture:** at least two commits with new work, pushed at least one hour
   apart.
 - GitHub's push time counts, not the date on a commit. A commit made by a coding agent
@@ -520,7 +525,7 @@ the four people in §0 is separated from the others.
     out of date, and where you checked (§9).
 12. You can stand in front of an examiner, with the app installed from the store, and
     answer the question "Why is this here?" for any line of it. You can do this because the
-    push was yours and the record exists (§9, Weeks 13–14).
+    push was yours and the record exists (§9, Week 13; in the EN section, Weeks 13–14).
 
 The untrained user with an assistant can do none of these things and does not know it.
 The engineer without the discipline can do most of them and does not do them. The aim of

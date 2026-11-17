@@ -10,6 +10,8 @@
   ],
   "week": 7,
   "members": [
-    { "student_id": "", "role": "tester", "what": "", "accepted": null, "why": "" }
+    { "student_id": "230504551", "role": "tester", "what": "The tester said the app was easy to understand and navigate.",
+     "accepted": null,
+      "why": "I did not make changes because the tester was satisfied with the app" }
   ]
 }
