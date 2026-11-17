@@ -9,3 +9,4 @@
 | GET | /api/weather | ?city=Istanbul | 200 {"city": "Istanbul", "today": {"temperature": 18, "condition": "Cloudy", "precipitation": "20%"}, "tomorrow": {"temperature": 20, "condition": "Rainy", "precipitation": "70%"}} | 422 city missing | REQ-002 |
 | GET | /api/outfits | ?city=Ankara | 200 {"city": "Ankara", "today": ["Jacket", "Hoodie"], "tomorrow": ["Umbrella", "Water-resistant footwear"]} | 404 Outfit recommendations unavailable for this location | REQ-003 |
 | GET | `/api/avatar` | `?hair=long&makeup=natural&clothing=casual` | 200 `{"hair": "long", "makeup": "natural", "clothing": "casual"}` | 422 invalid hair, makeup, or clothing option | REQ-004 |
+| POST | /chat | {"message": "What should I wear today?"} · Requires login token | 200 {"answer": "AI answer"} | 401 not logged in · 429 daily message limit reached · 503 AI service unavailable | REQ-010 |

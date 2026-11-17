@@ -64,7 +64,16 @@
      "functional": false,
      "priority": "should",
      "acceptance": "All important text is readable, buttons and controls are clearly distinguishable, and users can identify the purpose of each main action without confusion."
-     }
+     },
+
+    {
+  "id": "REQ-010",
+  "description": "The chatbot helps users answer questions about the weather and gives simple suggestions about suitable outfits based on the weather conditions.",
+  "functional": true,
+  "priority": "must",
+  "acceptance": "Only logged-in users can use the chatbot. It answers questions about the weather and provides outfit recommendations using only the user's own data. Each user can send a maximum of 20 messages per day."
+   }
+
 
   ] 
 } 

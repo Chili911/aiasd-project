@@ -230,3 +230,4 @@ STRONG: Samsung Galaxy Store has no sign-up or annual publishing fee. We will be
 2026-10-03 — Initial version of the proposal.
 2026-10-15 -  Fixed TC-003-01 and updated home.html button styling to improve outfit recommendation link visibility serving REQ-003.
 2026-10-23 — Added TC-001-04 to week04/test_cases.json to cover expired login codes under REQ-001.
+2026-11-17 — Write your chatbot change description here, mentioning REQ-010, TC-010-01, and the POST /chat row in week05/api.md.

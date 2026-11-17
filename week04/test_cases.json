@@ -182,6 +182,19 @@
         "Click Log in."
       ],
       "expected": "The expired code is refused with a message, and the user is not logged in."
+    },
+    {
+      "id": "TC-010-01",
+      "req": "REQ-010",
+      "run": "manual",
+      "title": "Test the Weatherly chatbot response",
+      "precondition": "The Weatherly chatbot is open.",
+      "steps": [
+        "Enter a question about the weather or outfit recommendations.",
+        "Send the question.",
+        "Check the chatbot response."
+      ],
+      "expected": "The chatbot displays a clear and relevant response to the user's question."
     }
   ]
 }
