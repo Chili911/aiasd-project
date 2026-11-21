@@ -12,22 +12,41 @@
   ],
 
 
-
-  "store": "Samsung Galaxy Store",
+{
+  "store": "Huawei AppGallery",
   "S1": {
     "date": "2026-10-15",
     "developer_name": "Weatherly Studio",
     "status": "applied",
     "evidence": "store_s1.png"
   },
-
-
-
-"S2": {
-  "date": "2026-10-29",
-  "app_name": "Weatherly",
-  "package": "com.weatherly.app",
-  "evidence": "store_s2.png"
-}
-
+  "S2": {
+    "date": "2026-10-29",
+    "app_name": "Weatherly",
+    "package": "com.weatherly.app",
+    "evidence": "store_s2.png"
+  },
+  "S3": {
+    "date": "2026-11-21",
+    "track": "open",
+    "version": "1.0.0",
+    "classmate_testers": [
+      "230504610",
+      "230504510",
+      "230504551",
+      "230504522",
+      "230504566",
+      "230504615"
+    ],
+    "other_testers": [
+      "djoubileboy@gmail.com",
+      "amedeleblond23@gmail.com",
+      "forhelp860@gmail.com",
+      "Safinasabir101@gmail.com",
+      "liukang69169@gmail.com",
+      "asddsadsaasdq@gmail.com"
+    ],
+    "privacy_url": "https://github.com/Chili911/aiasd-project/blob/main/PRIVACY.md",
+    "evidence": "store_s3.png"
+  }
 }
