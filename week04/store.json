@@ -10,9 +10,6 @@
     "Never write a password, a card number or an ID number in this file or anywhere else in the repository.",
     "You may delete this block once you have read it; the checker ignores it."
   ],
-
-
-{
   "store": "Huawei AppGallery",
   "S1": {
     "date": "2026-10-15",
@@ -39,12 +36,12 @@
       "230504615"
     ],
     "other_testers": [
-      "djoubileboy@gmail.com",
-      "amedeleblond23@gmail.com",
-      "forhelp860@gmail.com",
-      "Safinasabir101@gmail.com",
-      "liukang69169@gmail.com",
-      "asddsadsaasdq@gmail.com"
+      "Mehrshad Golchin",
+      "Omar Husain",
+      "Safina Sabir",
+      "Osama Ahmed",
+      "Manar Chaibi",
+      "Majdolin Ashour"
     ],
     "privacy_url": "https://github.com/Chili911/aiasd-project/blob/main/PRIVACY.md",
     "evidence": "store_s3.png"
