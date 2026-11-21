@@ -1,10 +1,13 @@
 {
-  "student_number": "230504603",
+  "student_id": "230504603",
+  "first_name": "Khadija",
+  "last_name": "Sabir",
+  "nickname": "Dija",
   "section": "en",
   "computers": [
     {
       "hostname": "DESKTOP-RNHUTUQ",
-      "git_email": "kha4ijasabir@example.com",
+      "git_email": "kha4ijasabir@gmail.com",
       "owner": "230504603",
       "also_used_by": "",
       "why": ""
