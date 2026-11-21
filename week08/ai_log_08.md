@@ -29,9 +29,9 @@ Bu hafta kullandığın her asistan için bir satır. "Model": uygulamanın ya d
 "not shown" yaz). "Free or paid": ücretsiz (free) / ücretli (paid). "Plan": ücretli paketin adı, ücretsizse "-".
 -->
 
-| Assistant | Model | Free or paid | Plan |
-|---|---|---|---|
-|  |  |  |  |
+| Assistant | Model    | Free or paid | Plan |
+|Chatgpt    |GPT-6     | Free         | none |
+| Gemeni    | Gemini   |     Free     |  Google AI Plus (Student Version)    |
 
 ## 2. Every use of an assistant this week
 
@@ -51,42 +51,23 @@ tamamını okudum, testleri çalıştırdım, telefonda denedim, api.md ile kar�
 "What I did with it": olduğu gibi tuttum / değiştirdim (neyi) / reddettim (neden).
 -->
 
-| What for | Assistant | What I asked, in short | How I checked it | What I did with it | Commit |
-|---|---|---|---|---|---|
-|  |  |  |  |  |  |
+| What for | Assistant | What I asked, in short  | How I checked it | What I did with it | Commit |
+|Gemini API integration| ChatGPT|	How to create a Gemini API key and connect it to Weatherly.|Checked API key setup and .env configuration.|Configured Gemini API for the backend.|Check GitHub|
+| Chat endpoint| ChatGPT |How to implement and test the POST /chat endpoint.  |Tested the endpoint and checked the project checker. |checked the project checker.| Implemented the chat endpoint.  |  2 commits|
+
+
 
 ## 3. How I worked with assistants this week
 
-<!--
-In 3 to 5 sentences, describe your way of working over the whole week: when you turned to an assistant, how you
-usually checked its answers, what you usually kept or refused, and where it helped you and where it did not.
-
-3–5 cümleyle bütün haftadaki çalışma biçimini anlat: bir asistana ne zaman başvurdun, cevaplarını genellikle
-nasıl kontrol ettin, genellikle neyi tuttun ya da reddettin, nerede işine yaradı, nerede yaramadı.
--->
+This week, I used ChatGPT, Gemini, and Claude to support my Weatherly project. I mainly used them to understand how to integrate the Gemini API, implement the backend chat endpoint, connect the mobile application to the backend, and troubleshoot errors. I asked questions when I was unsure about implementation steps and used the explanations to solve problems. I checked the suggestions by running the application, testing API endpoints, reviewing the output, and checking GitHub commits. I did not blindly copy the answers. I reviewed the code and tested whether the changes worked correctly in my project.
 
 ## 4. What I did without an assistant
 
-<!--
-Which part of this week's work did you write or decide yourself? 1 or 2 sentences.
-Bu haftanın işinin hangi kısmını asistansız yazdın ya da kendin kararlaştırdın? 1–2 cümle.
--->
+I worked independently on my Weatherly project by reviewing the existing code, organizing project files, and making changes to the application. I tested the application myself, checked the results, reviewed errors, and made sure the implemented features worked as expected. I also managed my GitHub repository, committed my changes, and tracked my project progress.
 
 ## 5. Next week
-
-<!--
-One thing you will do differently with assistants next week. 1 sentence.
-Gelecek hafta asistanlarla farklı yapacağın bir şey. 1 cümle.
--->
+Next week, I plan to continue developing Weatherly by improving the chat feature, testing the Gemini API integration, and fixing any remaining errors. I will focus on connecting the frontend and backend properly, testing the application on my mobile device, and improving the overall user experience. I also plan to review my code, update the project documentation, and push my completed changes to GitHub.
 
 ## 6. Before this course and now
 
-<!--
-This part will not be graded, so I kindly ask you to write it honestly.
-Before this course, how did you use AI assistants for code? What do you do differently now?
-Write 2 or 3 sentences, and give example(s) if you can.
-
-Bu kısım notlandırılmayacak, bu nedenle dürüstçe yazmanı rica ederim.
-Bu dersten önce yapay zeka asistanlarını kod için nasıl kullanıyordun? Şimdi neyi farklı yapıyorsun?
-2–3 cümle yaz ve yapabiliyorsan bir örnek ver.
--->
+Before this course, I mainly used AI assistants to get quick answers, generate code, and solve programming problems. Now, I understand that AI can be used as a development assistant, not just a code generator. I have learned to ask more specific questions, review the suggested code, test the results, and fix problems instead of blindly accepting AI-generated answers. I also understand the importance of checking whether the solution actually works in my project.
