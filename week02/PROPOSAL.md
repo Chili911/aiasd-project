@@ -220,7 +220,7 @@ WHAT: The main risks before Week 11 are an unfamiliar weather API, limited acces
 
 WEAK: he project may face unexpected technical issues, such as API failures, device compatibility problems, or hosting limits. We will identify these risks early, test them during development, and prepare backup solutions to avoid delays. 
 
-STRONG: Samsung Galaxy Store has no sign-up or annual publishing fee. We will begin beta testing and submit early enough to allow time for review. Fallback: provide the tested APK directly if store publication is delayed. 2. Weather API: The API will be tested early in development to make sure it works reliably. Fallback: use saved sample weather data if the API becomes unavailable. 3. Free hosting: We will check the hosting limits before deployment and test the app under those limits. Fallback: reduce usage or move to another free hosting service if the limits cause problems.
+STRONG: Huawei AppGallery Store has no sign-up or annual publishing fee. We will begin beta testing and submit early enough to allow time for review. Fallback: provide the tested APK directly if store publication is delayed. 2. Weather API: The API will be tested early in development to make sure it works reliably. Fallback: use saved sample weather data if the API becomes unavailable. 3. Free hosting: We will check the hosting limits before deployment and test the app under those limits. Fallback: reduce usage or move to another free hosting service if the limits cause problems.
 
 
 ## Change log (about 300 characters)
@@ -231,3 +231,4 @@ STRONG: Samsung Galaxy Store has no sign-up or annual publishing fee. We will be
 2026-10-15 -  Fixed TC-003-01 and updated home.html button styling to improve outfit recommendation link visibility serving REQ-003.
 2026-10-23 — Added TC-001-04 to week04/test_cases.json to cover expired login codes under REQ-001.
 2026-11-17 — Write your chatbot change description here, mentioning REQ-010, TC-010-01, and the POST /chat row in week05/api.md.
+2026-11-21 — §12: changed the planned store from Samsung Galaxy Store to Huawei AppGallery to match week04/store.json.

@@ -51,10 +51,10 @@ tamamını okudum, testleri çalıştırdım, telefonda denedim, api.md ile kar�
 "What I did with it": olduğu gibi tuttum / değiştirdim (neyi) / reddettim (neden).
 -->
 
-| What for | Assistant | What I asked, in short  | How I checked it | What I did with it | Commit |
-|Gemini API integration| ChatGPT|	How to create a Gemini API key and connect it to Weatherly.|Checked API key setup and .env configuration.|Configured Gemini API for the backend.|Check GitHub|
-| Chat endpoint| ChatGPT |How to implement and test the POST /chat endpoint.  |Tested the endpoint and checked the project checker. |checked the project checker.| Implemented the chat endpoint.  |  2 commits|
-
+| What for | Assistant | What I asked, in short | How I checked it | What I did with it | Commit |
+|---|---|---|---|---|---|
+| Gemini API integration | ChatGPT | How to create a Gemini API key and connect it to Weatherly. | Checked API key setup and `.env` configuration. | Configured Gemini API for the backend. | not kept |
+| Chat endpoint | ChatGPT | How to implement and test the POST `/chat` endpoint. | Tested the endpoint and checked the project checker. | Implemented the chat endpoint. | 2 commits |
 
 
 ## 3. How I worked with assistants this week
