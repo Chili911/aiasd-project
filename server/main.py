@@ -1,4 +1,3 @@
-
 """
 Weatherly - FastAPI Backend
 AIASD - Atlas University - Fall 2026-27
@@ -30,6 +29,7 @@ load_dotenv(ROOT_DIR / ".env")
 load_dotenv(ROOT_DIR / "server" / ".env")
 
 from server import course_login
+from server.email_service import send_verification_email
 from server.weather_service import (
     get_live_weather,
     recommend_clothing,
@@ -160,6 +160,27 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
+
+
+# Email delivery configuration
+original_deliver = course_login._deliver
+
+def deliver_verification_code(email: str, code: str) -> None:
+    # Preserve the professor's automated testing method
+    if os.getenv("AIASD_CODE_FILE"):
+        original_deliver(email, code)
+
+    # Use EmailJS when configured on Render
+    elif os.getenv("EMAILJS_SERVICE_ID"):
+        send_verification_email(email, code)
+
+    # Preserve the original SMTP method for local development
+    else:
+        original_deliver(email, code)
+
+
+# Connect EmailJS without editing the course file
+course_login._deliver = deliver_verification_code
 
 
 # Authentication endpoints
