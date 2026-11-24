@@ -11,10 +11,51 @@
     "Type this file yourself, by hand, right after the turn. No assistant writes, translates or corrects it, not even for the grammar. Your English or Turkish is not graded. A person reads it.",
     "Add as many objects as you need, with a comma between them. You may delete this block after you read it. The checker ignores it."
   ],
+
+  
   "week": 7,
   "runs": [
-    { "tc": "", "tester": "230504522", "device": "Huawei Y6 Prime 2019, Android 9", "round": 1, "result": "", "note": "" },
-    { "tc": "", "tester": "", "device": "", "round": 1, "result": "", "note": "" },
-    { "tc": "", "tester": "", "device": "", "round": 1, "result": "", "note": "" }
+    {
+      "tc": "TC-001-01",
+      "tester": "230504551",
+      "device": "Huawei Y6 Prime 2019, Android 9",
+      "round": 1,
+      "result": "pass",
+      "note": "Login opened home screen without asking for a password."
+    },
+    {
+      "tc": "TC-002-01",
+      "tester": "230504551",
+      "device": "Huawei Y6 Prime 2019, Android 9",
+      "round": 1,
+      "result": "pass",
+      "note": "Today and tomorrow Istanbul forecast displayed."
+    },
+    {
+      "tc": "TC-010-01",
+      "tester": "230504551",
+      "device": "Huawei Y6 Prime 2019, Android 9",
+      "round": 1,
+      "result": "pass",
+      "note": "Chatbot returned a relevant weather reply."
+    },
+
+    {
+  "tc": "TC-003-01",
+  "tester": "230504551",
+  "device": "Huawei Y6 Prime 2019, Android 9",
+  "round": 2,
+  "result": "pass",
+  "note": "Cooler weather outfit and rain reminders shown."
+},
+{
+  "tc": "TC-004-01",
+  "tester": "230504551",
+  "device": "Huawei Y6 Prime 2019, Android 9",
+  "round": 2,
+  "result": "pass",
+  "note": "Avatar hair, makeup, and outfit options updated."
+}
   ]
+
 }

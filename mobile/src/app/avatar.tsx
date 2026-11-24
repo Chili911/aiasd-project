@@ -11,7 +11,7 @@ import {
 
 // serves: REQ-004
 
-const API_URL = 'http://192.168.1.8:8000';
+const API_URL = 'https://aiasd-project-ddsi.onrender.com';
 
 type AvatarData = {
   hair: string;

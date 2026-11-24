@@ -13,7 +13,7 @@ import { authToken } from '../constants/auth';
 
 // serves: REQ-010
 
-const API_URL = 'http://192.168.1.8:8000';
+const API_URL = 'https://aiasd-project-ddsi.onrender.com';
 
 export default function ChatScreen() {
   const [message, setMessage] = useState('');

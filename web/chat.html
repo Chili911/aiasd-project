@@ -1,0 +1,39 @@
+<!-- serves: REQ-010 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weatherly Chat</title>
+</head>
+<body>
+  <h1>Weatherly Chat</h1>
+  <form id="chat-form">
+    <input id="chat-input" type="text" placeholder="Ask about weather or outfits..." required />
+    <button type="submit">Send</button>
+  </form>
+  <div id="chat-output"></div>
+
+  <script>
+    const form = document.getElementById("chat-form");
+    const input = document.getElementById("chat-input");
+    const output = document.getElementById("chat-output");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const message = input.value.trim();
+      if (!message) return;
+
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await res.json();
+      const reply = data.reply || data.answer || data.message || JSON.stringify(data);
+      output.innerHTML = `<p><strong>AI answer:</strong> ${reply}</p>`;
+    });
+  </script>
+</body>
+</html>

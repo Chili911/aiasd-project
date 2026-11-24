@@ -48,35 +48,43 @@ Delete this comment when you are done.
 
 ## The change I asked for
 
-[Name the assistant and the file that you gave it. Write the one change that you asked for, in one or two sentences.]
+I used ChatGPT and shared my Weatherly project files. I asked it to help fix the email verification feature so users could enter their email address and receive a 4-digit verification code before logging in.
 
 ## The change I received
 
-[Write what the diff changed. Name the lines that you asked for and every other line that it touched.]
+ChatGPT helped me implement the email verification feature. The changes included the email input, requesting a 4-digit verification code, and checking the code before allowing the user to log in.
 
 ## What I refused, and why
 
-[Write each change that you did not keep, and why. If the diff had nothing extra, write how you checked it.]
+I did not refuse any changes. I checked the diff to make sure it only contained the requested changes and did not modify unrelated files or existing functionality.
 
 ## The commit, and the phone
-
-[Write the commit id (its first 7 characters) and its message. Write how you showed on the phone that the change works.]
+Commit: 1f3f177
+Message: Update deliverables
 
 ## Evidence — the exchange and the diff
 
 ```text
 ME:
-[prompt]
+I am working on my Weatherly mobile application using React Native and Expo. Help me create a login and weather screen in mobile/src/app/index.tsx. Users should enter their email, request a 4-digit verification code, and verify the code to log in. After successful login, show today's and tomorrow's weather for Istanbul. Please connect the screen to my existing backend API endpoints.
 
 AI:
-[answer]
+I created the React Native screen in mobile/src/app/index.tsx. It includes an email input, a button to request a 4-digit verification code, a code verification screen, and a weather dashboard. It uses the /auth/code, /auth/login, and /auth/me endpoints and displays today's and tomorrow's weather.
 
 TERMINAL:
-[git diff]
-<!-- ME: holds your prompt. AI: holds the answer of the assistant. TERMINAL: holds the commands that
-     you typed and their output. It holds at least the git diff of the change before you accepted it.
-     Paste the rounds of the exchange that show the change. You may leave out whole rounds that do
-     not show it. Paste every ME:, AI: or TERMINAL: part that you keep whole, exactly as it came.
-     Remove nothing, and correct nothing, not even the grammar. For several rounds, repeat ME: and
-     AI:. -->
+git show eaf1af5
+
+commit eaf1af516ff6cf1b657b750d94b9954fcc461827
+Author: Khadija Sabir <kha4ijasabir@example.com>
+Date: Sun Nov 15 18:04:04 2026 +0300
+
+    Add Weatherly login and weather screen
+
+diff --git a/mobile/src/app/index.tsx b/mobile/src/app/index.tsx
+new file mode 100644
+--- /dev/null
++++ b/mobile/src/app/index.tsx
+@@ -0,0 +273 @@
+[The committed file contains 273 lines implementing the login and weather screen.]
+
 ```

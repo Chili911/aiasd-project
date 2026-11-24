@@ -101,6 +101,7 @@ Acceptance: when severe weather is detected in the forecast, the app displays an
 
 REQ-004 — The user can customize an avatar with different hairstyles, makeup, and clothing. — should — UC4
 Acceptance: when the user selects an item, the selected hairstyle, makeup, or clothing appears on the avatar.
+The complete list of functional and non-functional requirements, including all REQ IDs, is maintained in `week02/requirements.json`.
 
 REQ-005 — The user can change the avatar's body size and choose from available male and female avatar options. — should — UC3
 Acceptance: the user opens the avatar customization screen, selects an available avatar type, and changes its size; the avatar updates to show the selected appearance.
