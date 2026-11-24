@@ -49,3 +49,8 @@ chroma_db/
 faiss_index/
 # Visual Studio
 .vs/
+
+.env
+.env.*
+!.env.example
+login_code.txt
