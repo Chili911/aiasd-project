@@ -193,6 +193,21 @@ def health() -> dict:
     return {"status": "ok"}
 
 
+@app.get("/api/countries")
+def get_countries() -> dict:
+    from server.weather_service import COUNTRIES
+
+    countries = [
+        {
+            "code": code,
+            "name": "Türkiye" if code == "TR" else country["name"]
+        }
+        for code, country in COUNTRIES.items()
+    ]
+
+    countries.sort(key=lambda country: country["name"])
+    return {"countries": countries}
+
 # Worldwide location search
 @app.get("/api/locations")
 def get_locations(query: str = "", country_code: str = "") -> dict:
@@ -252,6 +267,9 @@ def get_outfits(
                 "max_temperature": day["max_temperature"],
                 "condition": day["condition"],
                 "rain_probability": day["rain_probability"],
+                "feels_like_min": day["feels_like_min"],
+                "feels_like_max": day["feels_like_max"],
+                "wind_speed": day["wind_speed"],
                 "outfits": recommend_clothing(day)
             }
             for day in weather["forecast"]
