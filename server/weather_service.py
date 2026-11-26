@@ -367,6 +367,13 @@ def get_live_weather(
             "sunrise,"
             "sunset"
         ),
+
+        "hourly": (
+            "temperature_2m,"
+            "weather_code,"
+            "precipitation_probability,"
+            "is_day"
+        ),
         "temperature_unit": "celsius",
         "wind_speed_unit": "kmh",
         "timezone": "auto",
@@ -376,7 +383,27 @@ def get_live_weather(
     try:
         current = data["current"]
         daily = data["daily"]
+        hourly = data["hourly"]
         forecast = []
+        hourly_forecast = []
+
+        # Return the next 24 hourly forecasts in the selected city's local time.
+        for i, hour in enumerate(hourly["time"]):
+            if hour < current["time"]:
+                continue
+
+            hourly_forecast.append({
+                "time": hour,
+                "temperature": hourly["temperature_2m"][i],
+                "condition": weather_condition(
+                    hourly["weather_code"][i]
+                ),
+                "rain_probability": hourly["precipitation_probability"][i],
+                "is_day": hourly["is_day"][i]
+            })
+
+            if len(hourly_forecast) >= 24:
+                break
 
         for i, date in enumerate(daily["time"]):
             rain = daily["precipitation_probability_max"][i]
@@ -423,6 +450,7 @@ def get_live_weather(
             "today": forecast[0],
             "tomorrow": forecast[1],
             "forecast": forecast,
+            "hourly": hourly_forecast,
             "source": "Open-Meteo"
         }
 
